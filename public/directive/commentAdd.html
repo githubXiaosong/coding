@@ -1,0 +1,35 @@
+
+
+<!--测试-->
+<div class="media" ng-repeat="item in commentList">
+
+    <div class="media-body">
+        <h4 class="media-heading">[: item.user.username :]</h4>:
+        <p>
+            [: item.content :]
+        </p>
+    </div>
+</div>
+
+<!--测试-->
+
+<div class="well" ng-if="isNull">
+    还没有人评论 快来抢沙发!
+</div>
+
+
+
+<form  name="comment_add_form"  class="form-inline comment-add-form" ng-submit="commentAdd()" >
+    <div class="form-group">
+        <input type="text"
+               class="form-control"
+               ng-model="commentContent"
+
+               placeholder="说点什么吧..."
+               required
+               ng-maxlength="255"
+                >
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-disabled="comment_add_form.$invalid ">评论</button>
+</form>
