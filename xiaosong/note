@@ -1,0 +1,364 @@
+1115
+
+migration   迁移
+scheam  概要
+artisan 技工 工匠
+denide  拒签
+
+rollback 要想成功执行 composer必有可用镜像
+php artisan migrate  --pretend 假装执行
+
+1117
+php artisan make: 创建一个设么东西 冒号后面跟要创建的东西
+php artisan make:migration create_table_users --create=users 创建users表
+php artisan make:model User床啊
+laravel 在返回时会自动将数组转化为json 将字符串转化为html
+
+1118
+Hash::check($password,$hashed_password) 比对加密密码
+$hashed_password=Hash::make($password); 创建密码
+
+session('abc') 检测有没有 abc 没有返回null
+session('abc','default');
+session()->all();
+session()->forget('username');删除username
+session()->pull('username');返回并删除username
+return session('id')?:false; 有就返回没有false
+session()->flush(); 清空session
+session()->set('person.name','xiasong'); 直接方数组
+session()->set('person.name','xiaosong');
+session()->set('xiaosong.age',20);
+session()->set('person.name.xiaosong','xia');
+
+1119
+artisan 是一个工具 make方法才是创造 migration 是对应的数据表 model对应的数据模型
+ $table->string('phone')->unique()->nullable(); //+86 13081114886 指定唯一键
+$table->foreign('user_id')->references('id')->on('users'); 指定外键
+|unique:questions 验证 数据库唯一
+
+$validator = Validator::make($input, $rules, $messages);
+$messages = [
+      'same'    => 'The :attribute and :other must match.',
+      'size'    => 'The :attribute must be exactly :size.',
+      'between' => 'The :attribute must be between :min - :max.',
+      'in'      => 'The :attribute must be one of the following types: :values',
+  ];
+
+  $messages = [
+      'email.required' => 'We need to know your e-mail address!',
+  ];
+
+
+  'custom' => [
+      'email' => [
+          'required' => 'We need to know your e-mail address!',
+      ],
+  ],
+  ->keyBy('id'); 指定返回值中用哪个做键 必须在最后
+  skip 跳跃跳读
+  //route页面不能直接返回 true 或者false
+  //命名时 delete update 等系统关键字不要用
+  denied 拒绝拒签
+  1123
+  php artisan make:migration create_table_answer_user --create=answer_user 给轴表命名的时候必须按照两个单词的首字母的先后顺序来命名
+  中间轴 是为了处理多对多的关系而产生的  创建的一张发中间表 用来存储 中间的数据
+  $table->unique(['user_id','answer_id','vote']); 数据库设置唯一属性
+
+  1124
+
+  //        此句就可以直接存储 数据和绑定参数了
+  //        两个外键分别对应中间轴的'两端' 因为是从一个数据模型中来 所以就已经绑定了一个参数了 这里需要在attach 方法中在第一个参数中传入另一个 '轴的一端' 在第二个参数中传入一个其他属性参数的数组
+  //        从一个数据模型中来 就已经绑定了一个参数了 另一个 采纳数
+          $answer->users()->attach(session('user_id'),['vote'=>rq('vote')]);
+
+  $data->values(); 只取值的数组
+
+$data->sortBy(function($item){
+              return $item->created_at;
+            });
+            重新排序
+$data->sortByDesc(function($item){
+              return $item->created_at;
+            });
+            重新排序 倒序
+
+若不是通用API就写在每个model里面 若果是通用的API就写在 一个controller之中
+
+if( ! Hash::check($password,$hashed_password)) //一参传过来的password 未加密  二参 加密的密码
+
+$hashed_password=Hash::make($password);
+
+1125
+captcha 验证码
+generate 形成
+migration 本质上就是一系列对数据库结构的操作一系列操作是绑定在一起的 所以会有一个rollback方法来返回操作 可以是创建表 也可以是更改表的结构
+
+return rand(1000,9999); 返回两个参数之间的一个随机数
+
+time() 返回一个 时间
+
+pivot
+
+$data['question_num']=answerins()->where(['user_id'=>rq('id')])->count();   得到用户提出的问题数量 就是answer表中userid相同的
+$data['question_num']=$user->answers()->count();                            得到用户关注问题数量 就是answer_user表中userid相同的数量
+
+route
+
+release 释放 发布 发行
+
+在script的src 和 link的href的路径是是从public目录开始的
+
+1130
+strict 精确的精准的 严格的
+interpolate 插入
+
+controller 是继承的关系
+
+用angluar 和 ui-router 的好处是实现了所有的信息的ajax
+
+p:before/after
+{
+content:"台词：-";
+background-color:yellow;
+clear:both
+color:red;
+font-weight:bold;       CSS可以直接寻找元素之后然后在之前和之后添加内容并且指定样式 此方法常用于浮动的清除浮动
+}
+
+disable:inline-block 尽量在一行显示
+background: rgba(0,0,0,.1);  r g b a(透明度)
+line-height: 1.5;行高
+brand 商标 牌子
+
+121
+在angular中的表单的提交不用 action 而是用ng-submit
+在写config/service/controller等的时候应该在function的时候为了防止提交到服务器的时候的压缩造成的变化而导致laravel不能识别 可以采取在船function的时候传一个数组然后在最后一位传对应的function 然后在前面的参数传入注入的依赖对应的字符串就不会应为压缩导致angluar不能识别了
+直接在页面中找任何Service都是找不到的 但是在js文件都是相互可见的 只有绑定到对应的controller的scope下面才能在页面中使用
+
+display: inline-block; 在一行显示
+
+123
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;      所有的浏览器都会支持的弧边
+
+  display: block;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,.1); 一个突出的页面效果
+
+124
+
+$status.go('login');
+$status.go('user.login'); 需要注入
+
+125
+ng-model 是独立于页面存在的
+直接写 ui-view就是子模块的数据
+
+只要是在*.blade.*中写的页面都是有laravel数据和laravel逻辑的可以使用的
+在laravel 会把 '/' 解压到public 目录下  但是 angluar 会把 '/' 解压到 127.0.0.1之中
+
+
+128
+.comment-item-name{
+    float: left;
+    width: 6%;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+.comment-item-content{
+    float: right;
+    width: 94%;
+    margin-left: 30px;
+    display: inline-block;
+}                       回答 的 姓名和内容分割样式
+
+
+12-9
+$questions= quesins()->orderBy('created_at','desc')
+            ->with('user')          //with方法调用数据模型中对应的方法 返回方法返回得到关系对应的模型
+            ->limit($l['limit'])
+            ->skip($l['skip'])
+            ->get()
+            ->keyBy('id');
+
+
+
+    public function user()   //再给关系方法命名的时候  只能命名为已有属性的去掉'_'后面的名字后者加s 不然laravel就会找不到该属性     不加s一般为belongsTo 加s一般为belongToMany
+    {
+        return $this
+            ->belongsTo('App\User');
+    }
+
+    也就是说 只有在表中有对应的属性 "XX_后缀" 的时候才能才能查到 不然是查不到的
+
+ng-if 判断逻辑
+ng-show ng-hide 专门用来判断用户的显示隐藏结果
+
+
+//1210
+也就是说 只有在创建了和属性名+'_后缀' 之后的表中才能使用belongsTo和belongsToMany
+
+text-align:center 居中显示
+
+
+$win.scrollTop 向上划过的距离
+
+
+ if( ($win.scrollTop() - ( $(document).height() - $win.height() ) )  > -30 ){
+                    console.log(1);
+                    }    //滑动到底部
+
+js数组合并 data.concat(newData);
+js判断数组长度为0则没有 r.data.data.length
+
+
+div p	选择 <div> 元素内部的所有 <p> 元素。	1
+div > p	选择父元素为 <div> 元素的所有 <p> 元素。
+
+if (typeof(a) == "undefined") { js 判断变量是否已经定义
+
+1212
+controller 应该是多样的 不应该用userController 而应该有userService 因为所有的都是采用的Service为主(相关的Controller引入) Controller为分支的
+
+
+前端和后端的传参的方式是不同的
+$stateParams 指定用/的方式传参数
+
+1213
+
+UI->前端(简单逻辑 主要根据model)->后端(鉴权 组织数据controller之中)
+后端(只把要用的数据发回去 不管格式)->前端(处理数据格式 发给UI)->UI(展现)
+
+with 是专门用来查出关联外键??? 而在model中还是要建立返回外键的方法(之中可以规定相关的belongsTo or belongsToMany)???
+
+前端的页面分层: 在前端的ui-route之中要确定所有的页面层级和嵌套关系以ui-view分层 下层页面只能在上层的ui-route中改变
+
+app.value('data',{'name':'我是林炳文'}); angular 是可以设置全局变量的
+
+
+1、controller层不要涉及到太多的业务逻辑，可以将公用的部分抽取到Service层
+2、service层：主要负责数据交互和数据处理、处理一些业务领域上的逻辑；
+3、controller层：主要负责初始化$scope的变量用于传递给view层，并且处理一些页面交互产生的逻辑;
+4、当一个功能是设计远程API调用、数据集、业务领悟复杂逻辑、将会大量重复的运算方法时就可以考虑将代码以service形式注入controller层。
+5、controller 里的 $scope 是唯一页面数据来源。不要直接修改 DOM。
+6、controller 不要在全局范围
+
+
+service 应该是多个controller的管理者 负责汇总处理所有的数据和业务逻辑  而controller的继承关系应该应用在页面的分层上
+
+controller是不需要继承的 直接在html中
+
+service之中应该是包含所有相关逻辑跨越页面的
+
+belongsToMany和hasMany是相对应的  belongsToMang是本身model包含对应的字段   hasMany是对应的字段包含指向自己model的外键
+---------------------
+belongTo        本身有字段指向对应
+
+belongsToMany   本身有字段指向对应
+
+hasMany         对应有字段指向本身
+
+hasOne          对应有字段指向本身
+-----------------
+
+1215
+改变自己对请求的看法:请求不一定会卡主界面的啊 可以先给用户应答 在后台请求 若请求不成功则反执行逻辑
+
+为了扩展  在写的一个模块的时候最好设计分层的controller 这样的话就是 方便统一性 也方便分层性 就算上层没有任何行为也为上层床啊金controller
+
+若要是想在answer中指定controller 那么必须有这个controller 不然的话就会报错 但是在页面中指定没有的controller却不会报错
+
+angular 页面也可以用? 和 &传递参数但是必须在template设定格式才行
+
+ui-sref 书写格式   ui-sref="answer.details({answer_id:item.answer.id})
+
+
+我觉得first() 比 get() 省资源
+
+
+-----------------单层的和多层的关系查询-------------------
+    public function answers()
+    {
+        return $this
+            ->hasMany('App\answer');
+    }
+
+    public function answers_user_users()
+    {
+        return $this
+            ->answers()
+            ->with('user')
+            ->with('users');
+    }
+-------------------------------------------------------
+
+1227
+-----------------------指令------------------------------
+建立独立作用域的目的是 创造出可以通用的指令 不会和页面耦合在一起
+
+restrict 限制 束缚
+
+run()方法会在所有模块执行过后被执行一次
+
+replace: true 里面东西就没有了
+
+transclude : true 才可以保留 并且指定位置  形式为 <div ng-transclude></div>
+
+不要在controller 和 service 中去操作dom  一定要在 指令的link函数中操作
+
+在页面中驼峰 属性 在attr中寻找的时候要用小写
+
+require 指明依赖的指令  写了这个就可以写 第四个参数
+
+指令中可以没有template的 不写template 就没有
+
+若不建立独立的作用域 指令会在当时的scope环境下运行
+
+scope:{
+    flaveor:'@'     把在当时html环境下制定的属性 帮到独立的scope下去  就相当于通过属性给指令传的参数绑到独立scope
+    flaveor:'='     指令内外scope进行双向数据绑定
+    greet:'&'       外部给指令内部传递一个方法 来在内部调用
+
+    三种方法都是通过html传递属性的方法来进行参数/模型/方法的传递 来完成指令和控制器间的通信
+}
+
+html中给独立的指令赋值的时候不用加{{}} 但是给属性和其他赋值的时候
+
+有一个巨大的坑:<drink1 flaveor=" flaveor "></drink1>       用=双向绑定字符串的时候
+            <drink1 flaveor=" {{flaveor}} "></drink1>   用@单向绑定字符串的时候
+
+---------------------------------------------------------
+1218
+
+customizable    可定制的
+collapse        摧毁 毁坏 折叠
+
+1219
+
+之前的angular-ui-bootstrap库的版本引入的太低啦!!!
+注意引入依赖的时候一定主注册依赖才行
+
+justified 有正当理由的 合理的 事出有因的
+representing 代表 体现 表现
+
+1220
+
+收展标配:    <span class="text-muted" style="cursor: pointer" ng-click="item.showComment=!item.showComment"> 展开评论 </span>
+                        <comment-add ng-if="item.showComment"></comment-add>
+
+@绑定传过去的东西是angluar不解析的 需要子html中解析  =绑定是会解析的
+
+注意 当元素的ng-if函数为false的时候是不会触发 link 函数的  只有当ng-if由false转为true的时候才会触发link函数
+
+angular 的表单验证用的都是name操作元素而不是id  name="comment_add_form"
+
+well墙 可以撑开页面的
+
+
+1226
+要想在内部把某个东西收起来 只能用nf-show 来控制 不能用ng-if来控制
+是不是只有具有公共属性的方法和属性才应该被抽取到service之中
+不用穿ID 服务器端会检测session
+一旦用了with方法去关联的时候所对应的外键就被'拉进生成的新的属性上去
