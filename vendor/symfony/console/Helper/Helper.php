@@ -14,7 +14,7 @@ namespace Symfony\Component\Console\Helper;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 
 /**
- * Helper is the base class for all helper classes.
+ * Helper is the base class for all Helper classes.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -23,7 +23,7 @@ abstract class Helper implements HelperInterface
     protected $helperSet = null;
 
     /**
-     * Sets the helper set associated with this helper.
+     * Sets the Helper set associated with this Helper.
      *
      * @param HelperSet $helperSet A HelperSet instance
      */
@@ -33,7 +33,7 @@ abstract class Helper implements HelperInterface
     }
 
     /**
-     * Gets the helper set associated with this helper.
+     * Gets the Helper set associated with this Helper.
      *
      * @return HelperSet A HelperSet instance
      */

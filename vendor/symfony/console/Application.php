@@ -190,9 +190,9 @@ class Application
     }
 
     /**
-     * Set a helper set to be used with the command.
+     * Set a Helper set to be used with the command.
      *
-     * @param HelperSet $helperSet The helper set
+     * @param HelperSet $helperSet The Helper set
      */
     public function setHelperSet(HelperSet $helperSet)
     {
@@ -200,7 +200,7 @@ class Application
     }
 
     /**
-     * Get the helper set associated with the command.
+     * Get the Helper set associated with the command.
      *
      * @return HelperSet The HelperSet instance associated with this command
      */
@@ -869,7 +869,7 @@ class Application
     }
 
     /**
-     * Gets the default helper set with the helpers that should always be available.
+     * Gets the default Helper set with the helpers that should always be available.
      *
      * @return HelperSet A HelperSet instance
      */

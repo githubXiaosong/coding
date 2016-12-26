@@ -86,7 +86,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Boot the testing helper traits.
+     * Boot the testing Helper traits.
      *
      * @return void
      */

@@ -253,13 +253,7 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
     );
 
     public static $classMap = array (
-        'AddFiledPhoneCaptcha' => __DIR__ . '/../..' . '/database/migrations/2016_11_25_140107_add_filed_phone_captcha.php',
-        'CreateTableAnswerUser' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_142121_create_table_answer_user.php',
-        'CreateTableAnswers' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_004907_create_table_answers.php',
-        'CreateTableComments' => __DIR__ . '/../..' . '/database/migrations/2016_11_21_112205_create_table_comments.php',
-        'CreateTableQuestionUser' => __DIR__ . '/../..' . '/database/migrations/2016_11_28_142751_create_table_question_user.php',
-        'CreateTableQuestions' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_013307_create_table_questions.php',
-        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_17_124834_create_table_users.php',
+        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_12_23_051113_create_table_users.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

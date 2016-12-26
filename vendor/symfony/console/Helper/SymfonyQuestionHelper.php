@@ -20,7 +20,7 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Symfony Style Guide compliant question helper.
+ * Symfony Style Guide compliant question Helper.
  *
  * @author Kevin Bond <kevinbond@gmail.com>
  */

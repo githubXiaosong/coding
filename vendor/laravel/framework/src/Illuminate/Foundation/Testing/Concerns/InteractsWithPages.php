@@ -444,7 +444,7 @@ trait InteractsWithPages
     }
 
     /**
-     * Add a root if the URL is relative (helper method of the hasLink function).
+     * Add a root if the URL is relative (Helper method of the hasLink function).
      *
      * @param  string  $url
      * @return string

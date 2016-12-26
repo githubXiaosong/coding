@@ -14,7 +14,7 @@ namespace Psy;
 use XdgBaseDir\Xdg;
 
 /**
- * A Psy Shell configuration path helper.
+ * A Psy Shell configuration path Helper.
  */
 class ConfigPaths
 {

@@ -10,18 +10,23 @@ class CreateTableUsers extends Migration
      *
      * @return void
      */
+
+
+    /**
+     * status 0观众 1主播(未直播) 21主播(直播中) 3封号 4被禁主播
+     */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+//            默认是不能为空的
             $table->increments('id');
-            $table->string('username')->unique()->nullable();//创建的是默认不能为空的
-            $table->string('password');//string默认长度255  varchar
-            $table->string('email')->unique()->nullable();
-            $table->text('intro')->nullable();
-            $table->string('phone')->unique()->nullable(); //+86 13081114886
+            $table->string('username')->unique()->nullable();
+            $table->string('password');
+            $table->unsignedSmallInteger('status')->default('0');
+            $table->text('desc')->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->text('avatar_url')->nullable();
             $table->timestamps();
-            //$table->string('country_code')->default('+86');
         });
     }
 

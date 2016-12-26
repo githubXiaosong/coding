@@ -82,7 +82,7 @@ class QuestionHelper extends Helper
     }
 
     /**
-     * Returns the helper's input stream.
+     * Returns the Helper's input stream.
      *
      * @return resource
      */

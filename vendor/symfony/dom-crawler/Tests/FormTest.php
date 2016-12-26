@@ -19,7 +19,7 @@ class FormTest extends \PHPUnit_Framework_TestCase
 {
     public static function setUpBeforeClass()
     {
-        // Ensure that the private helper class FormFieldRegistry is loaded
+        // Ensure that the private Helper class FormFieldRegistry is loaded
         class_exists('Symfony\\Component\\DomCrawler\\Form');
     }
 

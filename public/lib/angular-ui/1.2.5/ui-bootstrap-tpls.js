@@ -3109,7 +3109,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
 
 angular.module('ui.bootstrap.debounce', [])
 /**
- * A helper, internal service that debounces a function
+ * A Helper, internal service that debounces a function
  */
     .factory('$$debounce', ['$timeout', function($timeout) {
         return function(callback, debounceTime) {
@@ -3478,7 +3478,7 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.position'])
 
 angular.module('ui.bootstrap.stackedMap', [])
 /**
- * A helper, internal data structure that acts as a map but also allows getting / removing
+ * A Helper, internal data structure that acts as a map but also allows getting / removing
  * elements in the LIFO order
  */
     .factory('$$stackedMap', function() {
@@ -3532,7 +3532,7 @@ angular.module('ui.bootstrap.stackedMap', [])
     });
 angular.module('ui.bootstrap.modal', ['ui.bootstrap.stackedMap'])
 /**
- * A helper, internal data structure that stores all references attached to key
+ * A Helper, internal data structure that stores all references attached to key
  */
     .factory('$$multiMap', function() {
         return {
@@ -3633,7 +3633,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.stackedMap'])
     })
 
 /**
- * A helper directive for the $modal service. It creates a backdrop element.
+ * A Helper directive for the $modal service. It creates a backdrop element.
  */
     .directive('uibModalBackdrop', ['$animate', '$injector', '$uibModalStack',
         function($animate, $injector, $modalStack) {
@@ -4611,7 +4611,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
         };
 
         /**
-         * This is a helper function for translating camel-case to snake_case.
+         * This is a Helper function for translating camel-case to snake_case.
          */
         function snake_case(name) {
             var regexp = /[A-Z]/g;
@@ -6299,7 +6299,7 @@ angular.module('ui.bootstrap.timepicker', [])
 angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.debounce', 'ui.bootstrap.position'])
 
 /**
- * A helper service that can parse typeahead's syntax (string provided by users)
+ * A Helper service that can parse typeahead's syntax (string provided by users)
  * Extracted to a separate service for ease of unit testing
  */
     .factory('uibTypeaheadParser', ['$parse', function($parse) {

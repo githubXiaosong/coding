@@ -6,13 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AddFiledPhoneCaptcha' => $baseDir . '/database/migrations/2016_11_25_140107_add_filed_phone_captcha.php',
-    'CreateTableAnswerUser' => $baseDir . '/database/migrations/2016_11_23_142121_create_table_answer_user.php',
-    'CreateTableAnswers' => $baseDir . '/database/migrations/2016_11_20_004907_create_table_answers.php',
-    'CreateTableComments' => $baseDir . '/database/migrations/2016_11_21_112205_create_table_comments.php',
-    'CreateTableQuestionUser' => $baseDir . '/database/migrations/2016_11_28_142751_create_table_question_user.php',
-    'CreateTableQuestions' => $baseDir . '/database/migrations/2016_11_19_013307_create_table_questions.php',
-    'CreateTableUsers' => $baseDir . '/database/migrations/2016_11_17_124834_create_table_users.php',
+    'CreateTableUsers' => $baseDir . '/database/migrations/2016_12_23_051113_create_table_users.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

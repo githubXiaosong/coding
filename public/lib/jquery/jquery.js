@@ -3319,7 +3319,7 @@
             return deferred;
         },
 
-        // Deferred helper
+        // Deferred Helper
         when: function( subordinate /* , ..., subordinateN */ ) {
             var i = 0,
                 resolveValues = slice.call( arguments ),

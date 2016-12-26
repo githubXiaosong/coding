@@ -92,7 +92,7 @@ class Command
     }
 
     /**
-     * Sets the helper set.
+     * Sets the Helper set.
      *
      * @param HelperSet $helperSet A HelperSet instance
      */
@@ -102,7 +102,7 @@ class Command
     }
 
     /**
-     * Gets the helper set.
+     * Gets the Helper set.
      *
      * @return HelperSet A HelperSet instance
      */
@@ -595,13 +595,13 @@ class Command
     }
 
     /**
-     * Gets a helper instance by name.
+     * Gets a Helper instance by name.
      *
-     * @param string $name The helper name
+     * @param string $name The Helper name
      *
-     * @return mixed The helper value
+     * @return mixed The Helper value
      *
-     * @throws InvalidArgumentException if the helper is not defined
+     * @throws InvalidArgumentException if the Helper is not defined
      */
     public function getHelper($name)
     {

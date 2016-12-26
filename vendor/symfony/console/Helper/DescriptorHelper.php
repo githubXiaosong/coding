@@ -20,7 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 /**
- * This class adds helper method to describe objects in various formats.
+ * This class adds Helper method to describe objects in various formats.
  *
  * @author Jean-François Simon <contact@jfsimon.fr>
  */

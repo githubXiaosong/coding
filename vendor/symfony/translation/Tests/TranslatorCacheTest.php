@@ -92,7 +92,7 @@ class TranslatorCacheTest extends \PHPUnit_Framework_TestCase
         $msgid = 'test';
 
         $catalogue = new MessageCatalogue($locale, array());
-        $catalogue->addResource(new StaleResource()); // better use a helper class than a mock, because it gets serialized in the cache and re-loaded
+        $catalogue->addResource(new StaleResource()); // better use a Helper class than a mock, because it gets serialized in the cache and re-loaded
 
         /** @var LoaderInterface|\PHPUnit_Framework_MockObject_MockObject $loader */
         $loader = $this->getMock('Symfony\Component\Translation\Loader\LoaderInterface');

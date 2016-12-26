@@ -10,39 +10,47 @@ use Illuminate\Support\Facades\Validator;
 class User extends Model
 {
 
-    /*注册 API*/
+    /**
+     * @return array
+     * 只能用手机号注册
+     */
     public function signup()
     {
-      if(!$this->has_usernameOrphone_and_password())
-          return err('the phone or username is requied');
 
+        /**
+         *
+         */
+        if(!rq('phone') || !rq('password'))
+            return err('no phone or passwrod');
 
         $password=rq('password');
-        /* 用户名是否存在*/
-
+//
         $validator=Validator::make(
             rq(),
             [
                 'username'=> 'unique:users,username|min:5|max:255',
-                'phone'=> 'unique:users,phone|min:5|max:11',
-                'password'=> 'min:6|max:24|alpha_dash'
+                'phone'=> 'unique:users,phone|min:5|max:11|required',
+                'password'=> 'min:6|max:24|alpha_dash|required',
+                'desc'=>'max:255',
+                'avatar_url'=>'active_url'
             ],
             [
-                'username.unique'=>'username is exists',
-                'username.min'=>'username is too short',
-                'username.max'=>'username is too long',
-                'password.min'=>'password is too short',
-                'password.max'=>'password is too long',
-                'username.alpha_dash'=>'password format is not allowed'
+                'username.unique'=>'用户名已存在',
+                'username.min'=>'用户名长度不符合规则',
+                'username.max'=>'用户名长度不符合规则',
+                'password.min'=>'密码长度不符合规则',
+                'password.max'=>'密码长度不符合规则',
+                'username.alpha_dash'=>'用户名不合法',
+                'phone.unique'=>'该数据号已经被注册',
+                'desc.max'=>'描述的长度过长',
+                'avatar_url.active_url'=>'图片不合法'
             ]
         );
 
-//        dd(rq());
-
+//
         if($validator->fails())
             return ['status'=>0,'msg'=>$validator->messages()];
-
-        /* 加密密码*/
+//        /* 加密密码*/
 
         $hashed_password=Hash::make($password);
         $user=$this;
@@ -51,25 +59,27 @@ class User extends Model
             $user->username=rq('username');
         if(rq('phone'))
             $user->phone=rq('phone');
+        if(rq('desc'))
+            $user->desc=rq('desc');
+        if(rq('avatar_url'))
+            $user->avatar_url=rq('avatar_url');
+//
         if($user->save())
             return ['status'=>1,'msg'=>'succeed signup','id'=>$user->id];
         else
             return  ['status'=>0,'msg'=>'db insert failed'];
-        /* 存入数据库*/
-
-        dd($hashed_password);
     }
 
     /*登陆API*/
     public function login()
     {
         /*检查 用户名 和 密码 是否 存在*/
-
         if($this->is_login())
             return ['status'=>0,'msg'=>'you had login please logout first!'];
-        $check= $this->has_usernameOrphone_and_password();
-        if(!$check)
-            return ['status'=>1,'msg'=>'username or password can not be empty!'];
+
+        if( !( (rq('username') || rq('phone')) && rq('password') ) )
+            return err('username or phone and password is required');
+
 
         $password=rq('password');
 
@@ -100,20 +110,17 @@ class User extends Model
     public function logout()
     {
 //        session()->flush();//清空session
-
         if(!session('user_id'))
             err('you have not login ');
         session()->forget('username');
         session()->forget('user_id');
 
-        return   redirect()->back();
-
+        return   suc();
     }
 
 
     public function change_password()
     {
-
 //      判断登录
         if(!userins()->is_login(2))
            return err('no login');
@@ -152,7 +159,6 @@ class User extends Model
         if(!$user->save())
             return err('db error');
         return suc();
-
     }
 
     public function resetPassword_send()
@@ -235,8 +241,6 @@ class User extends Model
 
     }
 
-
-
     /*检测用户是否登陆*/
     public function is_login()
     {
@@ -244,9 +248,6 @@ class User extends Model
         return session('user_id')?:false;
 
     }
-
-
-
 
 //    检查是不是机器人
     public function is_robot($time=10)

@@ -27,7 +27,7 @@ class HelperSet implements \IteratorAggregate
     /**
      * Constructor.
      *
-     * @param Helper[] $helpers An array of helper.
+     * @param Helper[] $helpers An array of Helper.
      */
     public function __construct(array $helpers = array())
     {
@@ -37,9 +37,9 @@ class HelperSet implements \IteratorAggregate
     }
 
     /**
-     * Sets a helper.
+     * Sets a Helper.
      *
-     * @param HelperInterface $helper The helper instance
+     * @param HelperInterface $helper The Helper instance
      * @param string          $alias  An alias
      */
     public function set(HelperInterface $helper, $alias = null)
@@ -53,11 +53,11 @@ class HelperSet implements \IteratorAggregate
     }
 
     /**
-     * Returns true if the helper if defined.
+     * Returns true if the Helper if defined.
      *
-     * @param string $name The helper name
+     * @param string $name The Helper name
      *
-     * @return bool true if the helper is defined, false otherwise
+     * @return bool true if the Helper is defined, false otherwise
      */
     public function has($name)
     {
@@ -65,25 +65,25 @@ class HelperSet implements \IteratorAggregate
     }
 
     /**
-     * Gets a helper value.
+     * Gets a Helper value.
      *
-     * @param string $name The helper name
+     * @param string $name The Helper name
      *
-     * @return HelperInterface The helper instance
+     * @return HelperInterface The Helper instance
      *
-     * @throws InvalidArgumentException if the helper is not defined
+     * @throws InvalidArgumentException if the Helper is not defined
      */
     public function get($name)
     {
         if (!$this->has($name)) {
-            throw new InvalidArgumentException(sprintf('The helper "%s" is not defined.', $name));
+            throw new InvalidArgumentException(sprintf('The Helper "%s" is not defined.', $name));
         }
 
         return $this->helpers[$name];
     }
 
     /**
-     * Sets the command associated with this helper set.
+     * Sets the command associated with this Helper set.
      *
      * @param Command $command A Command instance
      */
@@ -93,7 +93,7 @@ class HelperSet implements \IteratorAggregate
     }
 
     /**
-     * Gets the command associated with this helper set.
+     * Gets the command associated with this Helper set.
      *
      * @return Command A Command instance
      */

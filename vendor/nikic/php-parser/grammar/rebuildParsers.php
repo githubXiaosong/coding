@@ -200,7 +200,7 @@ function ensureDirExists($dir) {
 }
 
 //////////////////////////////
-/// Regex helper functions ///
+/// Regex Helper functions ///
 //////////////////////////////
 
 function regex($regex) {

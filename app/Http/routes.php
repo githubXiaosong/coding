@@ -199,26 +199,14 @@ Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能
 
 
 
-
-
-
-
     /**
-     * controller中的各种API
+     * Tencentcontroller中的各种API
      */
     Route::any('api/timeline','CommonController@timeLine');
 
-    Route::any('api/userdetails','CommonController@userDetails');
+    Route::any('api/tencent/getPush','TencentController@createPush');
 
-    Route::any('api/getuseranswer','CommonController@getUserAnswer');
-
-    Route::any('api/getuserquestion','CommonController@getUserQuestion');
-
-    Route::any('api/getquestiondetails','CommonController@getQuestionDetails');
-
-    Route::any('api/getanswerandquestion','CommonController@getAnswerAndQuestion');
-
-    Route::any('api/getcomments','CommonController@getComments');
+    Route::any('api/tencent/getPlay','TencentController@getPlay');
 
 
     /**

@@ -19,21 +19,21 @@ namespace Symfony\Component\Console\Helper;
 interface HelperInterface
 {
     /**
-     * Sets the helper set associated with this helper.
+     * Sets the Helper set associated with this Helper.
      *
      * @param HelperSet $helperSet A HelperSet instance
      */
     public function setHelperSet(HelperSet $helperSet = null);
 
     /**
-     * Gets the helper set associated with this helper.
+     * Gets the Helper set associated with this Helper.
      *
      * @return HelperSet A HelperSet instance
      */
     public function getHelperSet();
 
     /**
-     * Returns the canonical name of this helper.
+     * Returns the canonical name of this Helper.
      *
      * @return string The canonical name
      */

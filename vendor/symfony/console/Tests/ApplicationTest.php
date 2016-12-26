@@ -762,7 +762,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($helperSet->has('formatter'));
 
-        // no other default helper set should be returned
+        // no other default Helper set should be returned
         $this->assertFalse($helperSet->has('dialog'));
         $this->assertFalse($helperSet->has('progress'));
     }
@@ -779,7 +779,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($helperSet->has('formatter'));
 
-        // no other default helper set should be returned
+        // no other default Helper set should be returned
         $this->assertFalse($helperSet->has('dialog'));
         $this->assertFalse($helperSet->has('progress'));
     }
@@ -1067,7 +1067,7 @@ class CustomApplication extends Application
     }
 
     /**
-     * Gets the default helper set with the helpers that should always be available.
+     * Gets the default Helper set with the helpers that should always be available.
      *
      * @return HelperSet A HelperSet instance
      */
