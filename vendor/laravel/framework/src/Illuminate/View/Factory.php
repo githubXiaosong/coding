@@ -447,7 +447,7 @@ class Factory implements FactoryContract
     }
 
     /**
-     * Build a class based container callback Closure.
+     * Build a class based container Callback Closure.
      *
      * @param  string  $class
      * @param  string  $prefix

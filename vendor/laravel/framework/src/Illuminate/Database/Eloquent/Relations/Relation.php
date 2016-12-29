@@ -166,7 +166,7 @@ abstract class Relation
     }
 
     /**
-     * Run a callback with constraints disabled on the relation.
+     * Run a Callback with constraints disabled on the relation.
      *
      * @param  \Closure  $callback
      * @return mixed

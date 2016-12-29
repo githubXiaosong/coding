@@ -372,3 +372,23 @@ expired 过期 期满
 anchor 主播
 facade 外表的
 写什么都要先建立命名空间 要不然找不到的
+
+1227
+不同文件夹级别不能使用相同命名空间?
+
+主页面中要包含 模块中要注册才能访问
+
+不开启web中间件是不能使用session的 但是开启之后不能接受非表单的POST请求
+
+他们之间最大的区别就是对于0的判断，若用empty判断会认为是空，用isset则认为不为空
+
+1228
+用到的类都要加命名空间
+
+https://www.qcloud.com/document/product/267/5958 服务器向腾讯云申请的接口
+https://www.qcloud.com/document/product/454/7916#1.-.E8.AE.BE.E8.AE.A1.E5.8E.9F.E7.90.86 小直播向服务器申请的接口
+
+php 可以两个值绑定&$args
+
+text 不能unique?
+

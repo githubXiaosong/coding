@@ -45,7 +45,7 @@ class Listener
     protected $workerCommand;
 
     /**
-     * The output handler callback.
+     * The output handler Callback.
      *
      * @var \Closure|null
      */
@@ -200,7 +200,7 @@ class Listener
     }
 
     /**
-     * Set the output handler callback.
+     * Set the output handler Callback.
      *
      * @param  \Closure  $outputHandler
      * @return void

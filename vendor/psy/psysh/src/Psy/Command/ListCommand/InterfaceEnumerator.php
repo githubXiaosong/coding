@@ -14,7 +14,7 @@ namespace Psy\Command\ListCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
 /**
- * Interface Enumerator class.
+ * Inter Enumerator class.
  */
 class InterfaceEnumerator extends Enumerator
 {

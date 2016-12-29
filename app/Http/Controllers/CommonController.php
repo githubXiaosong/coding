@@ -271,7 +271,7 @@ class CommonController extends Controller
      */
     public function test()
     {
-        dd( quesins()->find(1)->with('answers_user_users')->get()[0]);
+        dd('test');
 
     }
 

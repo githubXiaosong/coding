@@ -9,7 +9,7 @@
  */
 
 /**
- * Header Signer Interface used to apply Header-Based Signature to a message.
+ * Header Signer Inter used to apply Header-Based Signature to a message.
  *
  * @author Xavier De Cock <xdecock@gmail.com>
  */

@@ -30,7 +30,7 @@ class SqsQueue extends Queue implements QueueContract
     protected $prefix;
 
     /**
-     * The job creator callback.
+     * The job creator Callback.
      *
      * @var callable|null
      */
@@ -125,7 +125,7 @@ class SqsQueue extends Queue implements QueueContract
     }
 
     /**
-     * Define the job creator callback for the connection.
+     * Define the job creator Callback for the connection.
      *
      * @param  callable  $callback
      * @return $this

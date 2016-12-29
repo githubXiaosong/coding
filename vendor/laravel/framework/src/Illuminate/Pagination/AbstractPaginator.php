@@ -59,14 +59,14 @@ abstract class AbstractPaginator implements Htmlable
     protected $pageName = 'page';
 
     /**
-     * The current page resolver callback.
+     * The current page resolver Callback.
      *
      * @var \Closure
      */
     protected static $currentPathResolver;
 
     /**
-     * The current page resolver callback.
+     * The current page resolver Callback.
      *
      * @var \Closure
      */
@@ -304,7 +304,7 @@ abstract class AbstractPaginator implements Htmlable
     }
 
     /**
-     * Set the current request path resolver callback.
+     * Set the current request path resolver Callback.
      *
      * @param  \Closure  $resolver
      * @return void
@@ -331,7 +331,7 @@ abstract class AbstractPaginator implements Htmlable
     }
 
     /**
-     * Set the current page resolver callback.
+     * Set the current page resolver Callback.
      *
      * @param  \Closure  $resolver
      * @return void

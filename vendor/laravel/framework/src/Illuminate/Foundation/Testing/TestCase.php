@@ -143,7 +143,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Register a callback to be run after the application is created.
+     * Register a Callback to be run after the application is created.
      *
      * @param  callable  $callback
      * @return void
@@ -158,7 +158,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Register a callback to be run before the application is destroyed.
+     * Register a Callback to be run before the application is destroyed.
      *
      * @param  callable  $callback
      * @return void

@@ -302,7 +302,7 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
             $called = $buffer === 'foo';
         });
 
-        $this->assertTrue($called, 'The callback should be executed with the output');
+        $this->assertTrue($called, 'The Callback should be executed with the output');
     }
 
     public function testGetErrorOutput()
@@ -1057,9 +1057,9 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
     public function provideStartMethods()
     {
         return array(
-            array('start', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
-            array('run', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
-            array('mustRun', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
+            array('start', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a Callback.'),
+            array('run', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a Callback.'),
+            array('mustRun', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a Callback.'),
         );
     }
 

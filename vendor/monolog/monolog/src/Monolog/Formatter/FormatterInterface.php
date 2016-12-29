@@ -12,7 +12,7 @@
 namespace Monolog\Formatter;
 
 /**
- * Interface for formatters
+ * Inter for formatters
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */

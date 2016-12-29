@@ -9,7 +9,7 @@
  */
 
 /**
- * A TestRunner for the Command Line Interface (CLI)
+ * A TestRunner for the Command Line Inter (CLI)
  * PHP SAPI Module.
  *
  * @since Class available since Release 3.0.0
@@ -183,7 +183,7 @@ class PHPUnit_TextUI_Command
      *
      * A child class of PHPUnit_TextUI_Command can hook into the argument
      * parsing by adding the switch(es) to the $longOptions array and point to a
-     * callback method that handles the switch(es) in the child class like this
+     * Callback method that handles the switch(es) in the child class like this
      *
      * <code>
      * <?php
@@ -986,7 +986,7 @@ EOT;
     }
 
     /**
-     * Custom callback for test suite discovery.
+     * Custom Callback for test suite discovery.
      */
     protected function handleCustomTestSuite()
     {

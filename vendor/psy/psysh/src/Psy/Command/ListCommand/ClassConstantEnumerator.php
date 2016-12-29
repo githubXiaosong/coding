@@ -108,7 +108,7 @@ class ClassConstantEnumerator extends Enumerator
     protected function getKindLabel(\ReflectionClass $reflector)
     {
         if ($reflector->isInterface()) {
-            return 'Interface Constants';
+            return 'Inter Constants';
         } elseif (method_exists($reflector, 'isTrait') && $reflector->isTrait()) {
             return 'Trait Constants';
         } else {

@@ -91,7 +91,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     protected $deferredServices = [];
 
     /**
-     * A custom callback used to configure Monolog.
+     * A custom Callback used to configure Monolog.
      *
      * @var callable|null
      */
@@ -207,7 +207,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Register a callback to run after loading the environment.
+     * Register a Callback to run after loading the environment.
      *
      * @param  \Closure  $callback
      * @return void
@@ -220,7 +220,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Register a callback to run before a bootstrapper.
+     * Register a Callback to run before a bootstrapper.
      *
      * @param  string  $bootstrapper
      * @param  Closure  $callback
@@ -232,7 +232,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Register a callback to run after a bootstrapper.
+     * Register a Callback to run after a bootstrapper.
      *
      * @param  string  $bootstrapper
      * @param  Closure  $callback
@@ -883,7 +883,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Register a terminating callback with the application.
+     * Register a terminating Callback with the application.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -961,7 +961,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Define a callback to be used to configure Monolog.
+     * Define a Callback to be used to configure Monolog.
      *
      * @param  callable  $callback
      * @return $this

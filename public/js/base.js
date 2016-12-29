@@ -1,4 +1,4 @@
-angular.module('xiaohu',['ui.router','user','question','common','answer'])
+angular.module('xiaohu',['ui.router','user','question','common','answer','test'])
 
 
     .config([
@@ -31,6 +31,10 @@ angular.module('xiaohu',['ui.router','user','question','common','answer'])
                     templateUrl:'/laravel/xiaohu/public/tpl/page/signup' //先在页面的script中寻找这个页面 若没有则像服务器端申请页面
                 })
 
+                .state('test',{
+                    url:'/test',
+                    templateUrl:'/laravel/coding/public/tpl/page/test'
+                })
 
                 .state('question',{
                     abstract:true,
@@ -102,6 +106,7 @@ angular.module('xiaohu',['ui.router','user','question','common','answer'])
                     url:'/answer',//这里的/不是相对根目录而是相对上一层
                     templateUrl:'/laravel/xiaohu/public/tpl/page/user/answer' //先在页面的script中寻找这个页面 若没有则像服务器端申请页面
                 })
+
 
 
         }])

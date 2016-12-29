@@ -9,7 +9,7 @@
  */
 
 /**
- * Interface for the EventDispatcher which handles the event dispatching layer.
+ * Inter for the EventDispatcher which handles the event dispatching layer.
  *
  * @author Chris Corbyn
  */

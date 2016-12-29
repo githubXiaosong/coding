@@ -3,7 +3,7 @@
 use SuperClosure\Exception\ClosureUnserializationException;
 
 /**
- * Interface for a serializer that is used to serialize Closure objects.
+ * Inter for a serializer that is used to serialize Closure objects.
  */
 interface SerializerInterface
 {

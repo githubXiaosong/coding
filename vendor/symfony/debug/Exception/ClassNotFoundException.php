@@ -12,7 +12,7 @@
 namespace Symfony\Component\Debug\Exception;
 
 /**
- * Class (or Trait or Interface) Not Found Exception.
+ * Class (or Trait or Inter) Not Found Exception.
  *
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
  */

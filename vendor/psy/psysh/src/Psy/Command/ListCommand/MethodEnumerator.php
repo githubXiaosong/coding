@@ -110,7 +110,7 @@ class MethodEnumerator extends Enumerator
     protected function getKindLabel(\ReflectionClass $reflector)
     {
         if ($reflector->isInterface()) {
-            return 'Interface Methods';
+            return 'Inter Methods';
         } elseif (method_exists($reflector, 'isTrait') && $reflector->isTrait()) {
             return 'Trait Methods';
         } else {

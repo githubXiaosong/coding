@@ -624,7 +624,7 @@ class Event
     }
 
     /**
-     * Register a callback to further filter the schedule.
+     * Register a Callback to further filter the schedule.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -637,7 +637,7 @@ class Event
     }
 
     /**
-     * Register a callback to further filter the schedule.
+     * Register a Callback to further filter the schedule.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -751,7 +751,7 @@ class Event
     }
 
     /**
-     * Register a callback to ping a given URL before the job runs.
+     * Register a Callback to ping a given URL before the job runs.
      *
      * @param  string  $url
      * @return $this
@@ -764,7 +764,7 @@ class Event
     }
 
     /**
-     * Register a callback to be called before the operation.
+     * Register a Callback to be called before the operation.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -777,7 +777,7 @@ class Event
     }
 
     /**
-     * Register a callback to ping a given URL after the job runs.
+     * Register a Callback to ping a given URL after the job runs.
      *
      * @param  string  $url
      * @return $this
@@ -790,7 +790,7 @@ class Event
     }
 
     /**
-     * Register a callback to be called after the operation.
+     * Register a Callback to be called after the operation.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -801,7 +801,7 @@ class Event
     }
 
     /**
-     * Register a callback to be called after the operation.
+     * Register a Callback to be called after the operation.
      *
      * @param  \Closure  $callback
      * @return $this

@@ -50,7 +50,7 @@ class PushoverHandler extends SocketHandler
         'sound' => true,
         'retry' => true,
         'expire' => true,
-        'callback' => true,
+        'Callback' => true,
     );
 
     /**

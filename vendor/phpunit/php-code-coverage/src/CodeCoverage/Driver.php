@@ -9,7 +9,7 @@
  */
 
 /**
- * Interface for code coverage drivers.
+ * Inter for code coverage drivers.
  *
  * @since Class available since Release 1.0.0
  */

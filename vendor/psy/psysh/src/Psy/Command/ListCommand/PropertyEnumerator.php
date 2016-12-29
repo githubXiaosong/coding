@@ -111,7 +111,7 @@ class PropertyEnumerator extends Enumerator
     protected function getKindLabel(\ReflectionClass $reflector)
     {
         if ($reflector->isInterface()) {
-            return 'Interface Properties';
+            return 'Inter Properties';
         } elseif (method_exists($reflector, 'isTrait') && $reflector->isTrait()) {
             return 'Trait Properties';
         } else {

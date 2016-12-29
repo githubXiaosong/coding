@@ -33,7 +33,7 @@ class SwiftMailerHandlerTest extends TestCase
             ->method('send');
 
         $callback = function () {
-            throw new \RuntimeException('Swift_Message creation callback should not have been called in this test');
+            throw new \RuntimeException('Swift_Message creation Callback should not have been called in this test');
         };
         $handler = new SwiftMailerHandler($this->mailer, $callback);
 

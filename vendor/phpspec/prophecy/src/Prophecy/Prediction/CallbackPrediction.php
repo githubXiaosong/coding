@@ -27,9 +27,9 @@ class CallbackPrediction implements PredictionInterface
     private $callback;
 
     /**
-     * Initializes callback prediction.
+     * Initializes Callback prediction.
      *
-     * @param callable $callback Custom callback
+     * @param callable $callback Custom Callback
      *
      * @throws \Prophecy\Exception\InvalidArgumentException
      */
@@ -46,7 +46,7 @@ class CallbackPrediction implements PredictionInterface
     }
 
     /**
-     * Executes preset callback.
+     * Executes preset Callback.
      *
      * @param Call[]         $calls
      * @param ObjectProphecy $object

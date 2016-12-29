@@ -16,6 +16,7 @@
     <script src="js/common.js"></script>
     <script src="js/answer.js"></script>
     <script src="js/user.js"></script>
+    <script src="js/test.js"></script>
 
 </head>
 <body>

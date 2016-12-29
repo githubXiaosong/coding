@@ -9,12 +9,12 @@
  */
 
 /**
- * Interface for classes which can be invoked.
+ * Inter for classes which can be invoked.
  *
  * The invocation will be taken from a mock object and passed to an object
  * of this class.
  *
- * @since Interface available since Release 1.0.0
+ * @since Inter available since Release 1.0.0
  */
 interface PHPUnit_Framework_MockObject_Invokable extends PHPUnit_Framework_MockObject_Verifiable
 {

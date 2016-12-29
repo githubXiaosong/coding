@@ -9,9 +9,9 @@
  */
 
 /**
- * Interface for classes which must verify a given expectation.
+ * Inter for classes which must verify a given expectation.
  *
- * @since Interface available since Release 1.0.0
+ * @since Inter available since Release 1.0.0
  */
 interface PHPUnit_Framework_MockObject_Verifiable
 {

@@ -9,7 +9,7 @@
  */
 
 /**
- * Interface for all Header Encoding schemes.
+ * Inter for all Header Encoding schemes.
  *
  * @author Chris Corbyn
  */

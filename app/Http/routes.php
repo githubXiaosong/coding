@@ -15,18 +15,20 @@ function userins()
 {
     return new App\User;
 }
-function quesins()
+function roomins()
 {
-    return new App\Question;
+    return new App\Room;
 }
-function answerins()
+function categoryins()
 {
-    return new App\Answer;
+    return new App\Category;
 }
-function commentins()
-{
-    return new App\Comment;
-}
+
+
+ function callbackins()
+ {
+    return new App\Callback\Callback;
+ }
 
 function get_limit_and_skip($limit = null)//是不穿为空 而不是穿了null为空
 {
@@ -65,7 +67,11 @@ function isLogin()
     return userins()->is_login();
 }
 
-Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能使用session的
+
+
+
+//------------------------------------
+Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能使用session的 但是开启之后不能接受非表单的POST请求
 
 
 
@@ -90,123 +96,48 @@ Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能
         return userins()->logout();
     });
 
-    Route::any('api/user/changepassword',function(){
-        return userins()->change_password();
-    });
-
-    Route::any('api/user/resetpasswordsend',function(){
-        return userins()->resetPassword_send();
-    });
-
-    Route::any('api/user/resetpasswordvalidate',function(){
-        return userins()->resetPassword_validate();
-    });
-
-    Route::any('api/user/getuserinfo',function(){
-        return userins()->get_userInfo();
-    });
-
-    Route::any('api/user/exists',function(){
-        return userins()->exists();
-    });
-
-    Route::any('api/question/add',function(){
-        return quesins()->add();
-    });
-
-    Route::any('api/question/change',function(){
-        return quesins()->change();
-    });
-
-    Route::any('api/question/read',function(){
-        return quesins()->read();
-    });
-
-    Route::any('api/question/remove',function(){
-        return quesins()->remove();
-    });
 
 
-    Route::any('api/answer/add',function(){
-        return answerins()->add();
-    });
 
 
-    Route::any('api/answer/change',function(){
-        return answerins()->change();
-    });
-
-    Route::any('api/answer/read',function(){
-        return answerins()->read();
-    });
-
-    Route::any('api/answer/remove',function(){
-        return answerins()->remove();
-    });
-
-    Route::any('api/answer/vote',function(){
-        return answerins()->vote();
-    });
-
-    Route::any('api/comment/add',function(){
-        return commentins()->add();
-    });
-
-    Route::any('api/comment/remove',function (){
-       return commentins()->remove();
-    });
-
-    Route::any('api/comment/read',function (){
-        return commentins()->read();
-    });
 
 
-    /**
-     * 各种返回页面tml的方法
-     */
-    Route::any('tpl/page/home',function(){
-       return view('page.home');
-    });
 
-    Route::any('tpl/page/login',function(){
-        return view('page.login');
-    });
-
-    Route::any('tpl/page/signup',function(){
-        return view('page.signup');
-    });
-
-    Route::any('tpl/page/question/add',function(){
-        return view('page.question.add');
-    });
-
-    Route::any('tpl/page/question/details',function(){
-        return view('page.question.details');
-    });
-
-    Route::any('tpl/page/user',function(){
-        return view('page.user.user');
-    });
-
-    Route::any('tpl/page/user/question',function(){
-        return view('page.user.question');
-    });
-
-    Route::any('tpl/page/user/answer',function(){
-        return view('page.user.answer');
-    });
 
 
 
 
     /**
-     * Tencentcontroller中的各种API
+     * Controller中的各种API
      */
     Route::any('api/timeline','CommonController@timeLine');
 
-    Route::any('api/tencent/getPush','TencentController@createPush');
 
-    Route::any('api/tencent/getPlay','TencentController@getPlay');
+    /**
+     * 对客户端接口
+     */
+
+    Route::any('api/interface/RequestLVBAddr',function(){
+        return (new \App\Inter\RequestLVBAddr)->process();
+    });
+
+    Route::any('api/interface/FetchList',function(){
+        return (new \App\Inter\FetchList)->process();
+    });
+
+    Route::any('api/interface/ChangeStatus',function(){
+        return (new \App\Inter\ChangeStatus)->process();
+    });
+
+
+    /**
+     * callback
+     */
+    Route::any('api/callback',function(){
+        return callbackins()->tencentCallback();
+    });
+
+
 
 
     /**

@@ -9,7 +9,7 @@
  */
 
 /**
- * Interface for spools.
+ * Inter for spools.
  *
  * @author Fabien Potencier
  */

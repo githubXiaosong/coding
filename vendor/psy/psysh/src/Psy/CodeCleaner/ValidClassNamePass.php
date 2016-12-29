@@ -251,7 +251,7 @@ class ValidClassNamePass extends NamespaceAwarePass
             /** @var string $name */
             $name = $this->getFullyQualifiedName($interface);
             if (!$this->interfaceExists($name)) {
-                throw $this->createError(sprintf('Interface \'%s\' not found', $name), $stmt);
+                throw $this->createError(sprintf('Inter \'%s\' not found', $name), $stmt);
             }
         }
     }

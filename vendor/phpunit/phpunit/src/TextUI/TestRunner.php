@@ -11,7 +11,7 @@
 use SebastianBergmann\Environment\Runtime;
 
 /**
- * A TestRunner for the Command Line Interface (CLI)
+ * A TestRunner for the Command Line Inter (CLI)
  * PHP SAPI Module.
  *
  * @since Class available since Release 2.0.0

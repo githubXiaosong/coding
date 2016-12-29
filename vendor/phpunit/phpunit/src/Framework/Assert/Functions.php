@@ -1920,7 +1920,7 @@ function attributeEqualTo($attributeName, $value, $delta = 0.0, $maxDepth = 10, 
 function callback($callback)
 {
     return call_user_func_array(
-        'PHPUnit_Framework_Assert::callback',
+        'PHPUnit_Framework_Assert::Callback',
         func_get_args()
     );
 }

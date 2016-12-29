@@ -202,7 +202,7 @@ class AuthManager implements FactoryContract
     }
 
     /**
-     * Register a new callback based request guard.
+     * Register a new Callback based request guard.
      *
      * @param  string  $driver
      * @param  callable  $callback
@@ -220,7 +220,7 @@ class AuthManager implements FactoryContract
     }
 
     /**
-     * Get the user resolver callback.
+     * Get the user resolver Callback.
      *
      * @return \Closure
      */
@@ -230,7 +230,7 @@ class AuthManager implements FactoryContract
     }
 
     /**
-     * Set the callback to be used to resolve users.
+     * Set the Callback to be used to resolve users.
      *
      * @param  \Closure  $userResolver
      * @return $this

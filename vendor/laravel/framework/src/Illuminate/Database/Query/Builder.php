@@ -350,7 +350,7 @@ class Builder
 
         // If the column is simply a string, we can assume the join simply has a basic
         // "on" clause with a single condition. So we will just build the join with
-        // this simple join clauses attached to it. There is not a join callback.
+        // this simple join clauses attached to it. There is not a join Callback.
         else {
             $join = new JoinClause($type, $table);
 
@@ -878,7 +878,7 @@ class Builder
         $type = $not ? 'NotInSub' : 'InSub';
 
         // To create the exists sub-select, we will actually create a query and call the
-        // provided callback with the query so the developer may set any of the query
+        // provided Callback with the query so the developer may set any of the query
         // conditions they want for the in clause, then we'll put it in this array.
         call_user_func($callback, $query = $this->newQuery());
 
@@ -1596,8 +1596,8 @@ class Builder
         $results = $this->forPage($page = 1, $count)->get();
 
         while (count($results) > 0) {
-            // On each chunk result set, we will pass them to the callback and then let the
-            // developer take care of everything within the callback, which allows us to
+            // On each chunk result set, we will pass them to the Callback and then let the
+            // developer take care of everything within the Callback, which allows us to
             // keep the memory low for spinning through large result sets for working.
             if (call_user_func($callback, $results) === false) {
                 return false;
@@ -1612,7 +1612,7 @@ class Builder
     }
 
     /**
-     * Execute a callback over each item while chunking.
+     * Execute a Callback over each item while chunking.
      *
      * @param  callable  $callback
      * @param  int  $count

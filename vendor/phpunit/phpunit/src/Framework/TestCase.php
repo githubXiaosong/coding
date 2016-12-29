@@ -1199,7 +1199,7 @@ abstract class PHPUnit_Framework_TestCase extends PHPUnit_Framework_Assert imple
     public function setOutputCallback($callback)
     {
         if (!is_callable($callback)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'callback');
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'Callback');
         }
 
         $this->outputCallback = $callback;

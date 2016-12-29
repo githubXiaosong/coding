@@ -9,7 +9,7 @@
  */
 
 /**
- * Interface for all Encoder schemes.
+ * Inter for all Encoder schemes.
  *
  * @author Chris Corbyn
  */

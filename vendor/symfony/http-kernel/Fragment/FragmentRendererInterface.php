@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Controller\ControllerReference;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Interface implemented by all rendering strategies.
+ * Inter implemented by all rendering strategies.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
