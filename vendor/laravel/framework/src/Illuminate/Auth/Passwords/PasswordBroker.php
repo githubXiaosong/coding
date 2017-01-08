@@ -41,7 +41,7 @@ class PasswordBroker implements PasswordBrokerContract
     protected $emailView;
 
     /**
-     * The custom password validator Callback.
+     * The custom password validator callback.
      *
      * @var \Closure
      */
@@ -139,9 +139,9 @@ class PasswordBroker implements PasswordBrokerContract
 
         $pass = $credentials['password'];
 
-        // Once we have called this Callback, we will remove this token row from the
-        // table and return the response from this Callback so the user gets sent
-        // to the destination given by the developers from the Callback return.
+        // Once we have called this callback, we will remove this token row from the
+        // table and return the response from this callback so the user gets sent
+        // to the destination given by the developers from the callback return.
         call_user_func($callback, $user, $pass);
 
         $this->tokens->delete($credentials['token']);

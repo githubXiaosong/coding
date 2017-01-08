@@ -22,7 +22,7 @@ class Builder
     protected $grammar;
 
     /**
-     * The Blueprint resolver Callback.
+     * The Blueprint resolver callback.
      *
      * @var \Closure
      */
@@ -243,7 +243,7 @@ class Builder
     }
 
     /**
-     * Set the Schema Blueprint resolver Callback.
+     * Set the Schema Blueprint resolver callback.
      *
      * @param  \Closure  $resolver
      * @return void

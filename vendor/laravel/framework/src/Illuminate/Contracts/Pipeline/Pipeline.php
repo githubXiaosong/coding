@@ -31,7 +31,7 @@ interface Pipeline
     public function via($method);
 
     /**
-     * Run the pipeline with a final destination Callback.
+     * Run the pipeline with a final destination callback.
      *
      * @param  \Closure  $destination
      * @return mixed

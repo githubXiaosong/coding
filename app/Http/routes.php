@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -11,41 +11,35 @@
 |
 */
 /*通用方法*/
-function userins()
+
+function liverins()
 {
-    return new App\User;
-}
-function roomins()
-{
-    return new App\Room;
-}
-function categoryins()
-{
-    return new App\Category;
+    return new App\Liver;
 }
 
+function groupins()
+{
+    return new App\Group;
+}
 
  function callbackins()
  {
-    return new App\Callback\Callback;
+    return new \App\callback\Live_Callback;
  }
 
-function get_limit_and_skip($limit = null)//是不穿为空 而不是穿了null为空
+ function get_limit_and_skip($limit = null,$page)//是不穿为空 而不是穿了null为空
 {
-    $limit=$limit?:15;
-    return ['limit' => $limit, 'skip' => (rq('page') ? (rq('page') - 1) : 0) * $limit];
+    return ['limit' => $limit?:15, 'skip' => ($page ? ($page - 1) : 0) * $limit];
 }
 
-
-
-function rq($key=null)
+ function rq($key=null)
 {
     return ($key==null) ? Request::all() : Request::get($key);
 }
 
 function suc($data=null){
 
-    $ram=['status'=>1];
+    $ram=['status'=>0];
 
     if($data)
     {
@@ -59,7 +53,7 @@ function suc($data=null){
 function err($msg='error',$data=null){
     if($data)
         return array_merge(['status'=>2,'msg'=>$msg],$data);
-    return ['status'=>0,'msg'=>$msg];
+    return ['status'=>1,'msg'=>$msg];
 }
 
 function isLogin()
@@ -96,17 +90,6 @@ Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能
         return userins()->logout();
     });
 
-
-
-
-
-
-
-
-
-
-
-
     /**
      * Controller中的各种API
      */
@@ -129,12 +112,32 @@ Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能
         return (new \App\Inter\ChangeStatus)->process();
     });
 
+    Route::any('api/interface/EnterGroup',function(){
+        return (new \App\Inter\EnterGroup)->process();
+    });
 
-    /**
-     * callback
-     */
-    Route::any('api/callback',function(){
-        return callbackins()->tencentCallback();
+    Route::any('api/interface/FetchGroupMemberList',function(){
+        return (new \App\Inter\FetchGroupMemberList)->process();
+    });
+
+    Route::any('api/interface/ForbidLive',function(){
+        return (new \App\Inter\ForbidLive)->process();
+    });
+
+    Route::any('api/interface/GetCOSSign',function(){
+        return (new \App\Inter\GetCOSSign)->process();
+    });
+
+    Route::any('api/interface/GetCOSSign',function(){
+        return (new \App\Inter\GetLiverInfo)->process();
+    });
+
+    Route::any('api/interface/QuitGroup',function(){
+        return (new \App\Inter\QuitGroup)->process();
+    });
+
+    Route::any('api/interface/RequestLVBAddr',function(){
+        return (new \App\Inter\RequestLVBAddr)->process();
     });
 
 
@@ -143,11 +146,15 @@ Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能
     /**
      *   测试API
      */
-    Route::any('tpl/test/test',function(){
-        return view('test.test');
-    });
+    Route::any('api/test','CommonController@test');
 
+});
 
+/**
+ * callback
+ */
+Route::any('api/callback',function(){
+    return callbackins()->process();
 });
 
 

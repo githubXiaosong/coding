@@ -132,11 +132,11 @@ var refStyle = doc.createElement('style'),
 (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle);
 
 if (!doc.addEventListener) {
-    addEventListener = function (element, eventName, Callback) {
+    addEventListener = function (element, eventName, callback) {
         element.attachEvent('on' + eventName, function (e) {
             e.preventDefault = function () {e.returnValue = false;};
             e.target = e.srcElement;
-            Callback(e);
+            callback(e);
         });
     };
 }

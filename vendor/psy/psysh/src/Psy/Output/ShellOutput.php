@@ -60,7 +60,7 @@ class ShellOutput extends ConsoleOutput
      *
      * Upon completion, the output pager is flushed.
      *
-     * @param string|array|Closure $messages A string, array of strings or a Callback.
+     * @param string|array|Closure $messages A string, array of strings or a callback.
      * @param int                  $type     (default: 0)
      */
     public function page($messages, $type = 0)
@@ -70,7 +70,7 @@ class ShellOutput extends ConsoleOutput
         }
 
         if (!is_array($messages) && !is_callable($messages)) {
-            throw new \InvalidArgumentException('Paged output requires a string, array or Callback.');
+            throw new \InvalidArgumentException('Paged output requires a string, array or callback.');
         }
 
         $this->startPaging();

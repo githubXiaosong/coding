@@ -85,7 +85,7 @@ class RequestDataCollectorTest extends \PHPUnit_Framework_TestCase
             ),
 
             array(
-                'Static Callback as string',
+                'Static callback as string',
                 'Symfony\Component\HttpKernel\Tests\DataCollector\RequestDataCollectorTest::staticControllerMethod',
                 'Symfony\Component\HttpKernel\Tests\DataCollector\RequestDataCollectorTest::staticControllerMethod',
             ),

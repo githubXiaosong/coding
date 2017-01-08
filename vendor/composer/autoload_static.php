@@ -253,9 +253,8 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
     );
 
     public static $classMap = array (
-        'CreateTableCategories' => __DIR__ . '/../..' . '/database/migrations/2016_12_28_145509_create_table_categories.php',
-        'CreateTableRooms' => __DIR__ . '/../..' . '/database/migrations/2016_12_28_140645_create_table_rooms.php',
-        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_12_23_051113_create_table_users.php',
+        'CreateTableGroups' => __DIR__ . '/../..' . '/database/migrations/2017_01_01_120924_create_table_groups.php',
+        'CreateTableLivers' => __DIR__ . '/../..' . '/database/migrations/2017_01_01_120846_create_table_livers.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -345,7 +344,7 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
         'PHPUnit_Framework_Constraint_ArrayHasKey' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php',
         'PHPUnit_Framework_Constraint_ArraySubset' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php',
         'PHPUnit_Framework_Constraint_Attribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Attribute.php',
-        'PHPUnit_Framework_Constraint_Callback' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Callback.php',
+        'PHPUnit_Framework_Constraint_Callback' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/callback.php',
         'PHPUnit_Framework_Constraint_ClassHasAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php',
         'PHPUnit_Framework_Constraint_ClassHasStaticAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php',
         'PHPUnit_Framework_Constraint_Composite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Composite.php',

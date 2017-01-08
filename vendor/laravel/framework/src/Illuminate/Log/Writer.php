@@ -262,7 +262,7 @@ class Writer implements LogContract, PsrLoggerInterface
     }
 
     /**
-     * Register a new Callback handler for when a log event is triggered.
+     * Register a new callback handler for when a log event is triggered.
      *
      * @param  \Closure  $callback
      * @return void

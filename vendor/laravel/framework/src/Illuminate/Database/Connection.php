@@ -487,7 +487,7 @@ class Connection implements ConnectionInterface
     {
         $this->beginTransaction();
 
-        // We'll simply execute the given Callback within a try / catch block
+        // We'll simply execute the given callback within a try / catch block
         // and if we catch any exception we can rollback the transaction
         // so that none of the changes are persisted to the database.
         try {
@@ -579,7 +579,7 @@ class Connection implements ConnectionInterface
     }
 
     /**
-     * Execute the given Callback in "dry run" mode.
+     * Execute the given callback in "dry run" mode.
      *
      * @param  \Closure  $callback
      * @return array
@@ -596,7 +596,7 @@ class Connection implements ConnectionInterface
 
         // Basically to make the database connection "pretend", we will just return
         // the default values for all the query methods, then we will return an
-        // array of queries that were "executed" within the Closure Callback.
+        // array of queries that were "executed" within the Closure callback.
         $callback($this);
 
         $this->pretending = false;
@@ -655,7 +655,7 @@ class Connection implements ConnectionInterface
      */
     protected function runQueryCallback($query, $bindings, Closure $callback)
     {
-        // To execute the statement, we'll simply call the Callback, which will actually
+        // To execute the statement, we'll simply call the callback, which will actually
         // run the SQL against the PDO connection. Then we can calculate the time it
         // took to execute and log the query SQL, bindings and time in our memory.
         try {

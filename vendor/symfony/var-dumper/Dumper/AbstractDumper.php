@@ -143,7 +143,7 @@ abstract class AbstractDumper implements DataDumperInterface, DumperInterface
     }
 
     /**
-     * Generic line dumper Callback.
+     * Generic line dumper callback.
      *
      * @param string $line  The line to write.
      * @param int    $depth The recursive depth in the dumped structure.

@@ -358,7 +358,7 @@ class Shell extends Application
     }
 
     /**
-     * Pass the beforeLoop Callback through to the Loop instance.
+     * Pass the beforeLoop callback through to the Loop instance.
      *
      * @see Loop::beforeLoop
      */
@@ -368,7 +368,7 @@ class Shell extends Application
     }
 
     /**
-     * Pass the afterLoop Callback through to the Loop instance.
+     * Pass the afterLoop callback through to the Loop instance.
      *
      * @see Loop::afterLoop
      */

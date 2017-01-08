@@ -392,3 +392,96 @@ php 可以两个值绑定&$args
 
 text 不能unique?
 
+------------------------------------------------------
+        Schema::create('rooms', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id')->unique();
+            $table->text('url');
+            $table->string('title');
+            $table->string('desc')->nullable();
+            $table->tinyInteger('status')->nullable()->default('1');
+            $table->text('cover_addr')->nullable();
+            $table->unsignedSmallInteger('category_id');
+            $table->unsignedInteger('watcher_num')->nullable()->default(0);
+            $table->unsignedInteger('good_num')->nullable()->default(0);
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->timestamps();
+
+
+      Schema::create('users', function (Blueprint $table) {
+//            默认是不能为空的
+            $table->increments('id');
+            $table->string('username')->unique()->nullable();
+            $table->string('password');
+            $table->unsignedSmallInteger('status')->default('0');
+            $table->text('desc')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->text('avatar_url')->nullable();
+            $table->timestamps();
+------------------------------------------------------
+
+同时不能采集包含所有的用户和未登录用的信息
+
+constraint 限制 约束
+correct 正确的  incorrect 不正确的
+外键必须是其他表的主键
+
+laravel 表必须规定成主键为ID
+
+主键可以是多个  使用来标示 字段唯一性的一个标志
+
+integrity 完整的
+constraint 约束外键
+violation 违反 妨碍 侵犯
+外键的约束 要保证插入的时候有外间的的那一条记录是存在的 不然会导致 插入失败
+
+keyBy : 用标志的列作为键名返回若有多个相同的键或者有没有所指定的键则只返回一个
+
+isset() empty() 他们之间最大的区别就是对于0的判断，若用empty判断会认为是空，用isset则认为不为
+
+1 5
+file_get_contents("php://input"); 得到网页请求内容  json
+
+
+  json_encode( array(
+            'code' => 0
+        ));
+        header("Content-Length:".strlen($json_result));  向网页中返回内容 json
+        echo $json_result;
+
+类名要和文件名保持一致 才可以用命名空间
+在用session就不能用的POST访问了
+
+
+DB类和模型类返回的数据格式不一样
+'flag' => 'required|integer|min:0|in:1,2'
+
+18
+php artisan make:migration create_users_table --create=users        这个迁移要创建一个新的数据表
+php artisan make:migration add_votes_to_users_table --table=users   为这个迁移指定要操作的数据表
+up方法用于新增表，列或者索引到数据库，而down方法就是up方法的反操作，和up里的操作相反。
+php artisan migrate:rollback --step=5
+检查数据表是不是存在
+if (Schema::hasTable('users')) {
+    //
+}
+
+if (Schema::hasColumn('users', 'email')) {
+    //
+}
+新增一个列 这里不是create而是table
+Schema::table('users', function ($table) {
+    $table->string('email');
+});
+修改一个列 后面要加->change()
+Schema::table('users', function ($table) {
+    $table->string('name', 50)->change();
+});
+重命名列 删除列什么的都有
+Schema::table('users', function ($table) {
+    $table->renameColumn('from', 'to');
+});
+以及外键的增删改查都存在

@@ -135,7 +135,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Execute a Callback over each item.
+     * Execute a callback over each item.
      *
      * @param  callable  $callback
      * @return $this
@@ -335,7 +335,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Group an associative array by a field or using a Callback.
+     * Group an associative array by a field or using a callback.
      *
      * @param  callable|string  $groupBy
      * @param  bool  $preserveKeys
@@ -367,7 +367,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Key an associative array by a field or using a Callback.
+     * Key an associative array by a field or using a callback.
      *
      * @param  callable|string  $keyBy
      * @return static
@@ -793,7 +793,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Sort through each item with a Callback.
+     * Sort through each item with a callback.
      *
      * @param  callable|null  $callback
      * @return static
@@ -815,7 +815,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Sort the collection using the given Callback.
+     * Sort the collection using the given callback.
      *
      * @param  callable|string  $callback
      * @param  int   $options
@@ -828,7 +828,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
 
         $callback = $this->valueRetriever($callback);
 
-        // First we will loop through the items and get the comparator from a Callback
+        // First we will loop through the items and get the comparator from a callback
         // function which we were given. Then, we will sort the returned values and
         // and grab the corresponding values for the sorted keys from this array.
         foreach ($this->items as $key => $value) {
@@ -849,7 +849,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Sort the collection in descending order using the given Callback.
+     * Sort the collection in descending order using the given callback.
      *
      * @param  callable|string  $callback
      * @param  int  $options
@@ -912,7 +912,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Transform each item in the collection using a Callback.
+     * Transform each item in the collection using a callback.
      *
      * @param  callable  $callback
      * @return $this
@@ -960,7 +960,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Get a value retrieving Callback.
+     * Get a value retrieving callback.
      *
      * @param  string  $value
      * @return callable

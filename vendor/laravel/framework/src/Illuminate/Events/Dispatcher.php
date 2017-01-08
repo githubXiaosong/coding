@@ -88,7 +88,7 @@ class Dispatcher implements DispatcherContract
     }
 
     /**
-     * Setup a wildcard listener Callback.
+     * Setup a wildcard listener callback.
      *
      * @param  string  $event
      * @param  mixed  $listener

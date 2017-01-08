@@ -28,7 +28,7 @@ class ReturnArgumentPromise implements PromiseInterface
     private $index;
 
     /**
-     * Initializes Callback promise.
+     * Initializes callback promise.
      *
      * @param int $index The zero-indexed number of the argument to return
      *

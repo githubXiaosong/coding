@@ -28,7 +28,7 @@ class SqlServerConnection extends Connection
 
         $this->getPdo()->exec('BEGIN TRAN');
 
-        // We'll simply execute the given Callback within a try / catch block
+        // We'll simply execute the given callback within a try / catch block
         // and if we catch any exception we can rollback the transaction
         // so that none of the changes are persisted to the database.
         try {

@@ -17,7 +17,7 @@ use Prophecy\Exception\InvalidArgumentException;
 use Closure;
 
 /**
- * Callback promise.
+ * callback promise.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
@@ -26,9 +26,9 @@ class CallbackPromise implements PromiseInterface
     private $callback;
 
     /**
-     * Initializes Callback promise.
+     * Initializes callback promise.
      *
-     * @param callable $callback Custom Callback
+     * @param callable $callback Custom callback
      *
      * @throws \Prophecy\Exception\InvalidArgumentException
      */
@@ -45,7 +45,7 @@ class CallbackPromise implements PromiseInterface
     }
 
     /**
-     * Evaluates promise Callback.
+     * Evaluates promise callback.
      *
      * @param array          $args
      * @param ObjectProphecy $object

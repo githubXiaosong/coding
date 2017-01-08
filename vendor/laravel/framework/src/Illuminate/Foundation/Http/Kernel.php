@@ -234,7 +234,7 @@ class Kernel implements KernelContract
     }
 
     /**
-     * Get the route dispatcher Callback.
+     * Get the route dispatcher callback.
      *
      * @return \Closure
      */

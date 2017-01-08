@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use App\Callback\Check_online_status;
+use App\dao\Dao;
+use App\Helper\GlobalFunction;
+use App\Helper\TencentHelper;
 use App\Http\Requests;
 
 class CommonController extends Controller
@@ -25,7 +28,7 @@ class CommonController extends Controller
 
         dd(AppKeyasd);
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5, rq('page'));
 
         /**
          *这个orderBy limit skip 配合方法就是从数据库中批量取数据的
@@ -33,9 +36,8 @@ class CommonController extends Controller
          */
 
 
-
-        $data= [];
-        $answers= answerins()->orderBy('created_at','desc')
+        $data = [];
+        $answers = answerins()->orderBy('created_at', 'desc')
             ->with('user')
             ->with('users')
             ->limit($l['limit'])
@@ -43,26 +45,25 @@ class CommonController extends Controller
             ->get()
             ->keyBy('id');
 
-        $quesins=quesins();
-        $comment=commentins();
-        $item=[];
-        foreach($answers as $ans)
-        {
-            $que=$quesins->where(['id'=>$ans->question_id])->first
+        $quesins = quesins();
+        $comment = commentins();
+        $item = [];
+        foreach ($answers as $ans) {
+            $que = $quesins->where(['id' => $ans->question_id])->first
 
             ();
-            $com=$comment->where(['answer_id'=>$ans->id])
+            $com = $comment->where(['answer_id' => $ans->id])
                 ->with('user')
                 ->get();
-            $item['question']=$que;
-            $item['answer']=$ans;
-            $item['comment']=$com;
-            $data[]=$item;
+            $item['question'] = $que;
+            $item['answer'] = $ans;
+            $item['comment'] = $com;
+            $data[] = $item;
 
         }
 
 //        dd($data);
-        return ['status'=>1,'data'=>$data];
+        return ['status' => 1, 'data' => $data];
     }
 
 
@@ -74,22 +75,22 @@ class CommonController extends Controller
     public function userDetails()
     {
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5);
 
-        if(!rq('id'))
+        if (!rq('id'))
             return err('that is not id(user)');
 
-        $get=['id','username','avatar_url','email','phone'];
-        $user=userins()->find(rq('id'),$get);
-        if(!$user)
+        $get = ['id', 'username', 'avatar_url', 'email', 'phone'];
+        $user = userins()->find(rq('id'), $get);
+        if (!$user)
             return err('no that user');
 
         /**
          * 用户的提的问题
          */
-        $questions=quesins()
-            ->orderBy('created_at','desc')
-            ->where(['user_id'=>$user->id])
+        $questions = quesins()
+            ->orderBy('created_at', 'desc')
+            ->where(['user_id' => $user->id])
             ->limit($l['limit'])
             ->skip($l['skip'])
             ->get()
@@ -98,9 +99,9 @@ class CommonController extends Controller
         /**
          * 用户的回答
          */
-        $answers=answerins()
-            ->orderBy('created_at','desc')
-            ->where(['user_id'=>$user->id])
+        $answers = answerins()
+            ->orderBy('created_at', 'desc')
+            ->where(['user_id' => $user->id])
             /**
              * 用户的回答所对应的问题
              */
@@ -113,10 +114,10 @@ class CommonController extends Controller
         /**
          * 组合 返回
          */
-        $data=[
-            'user'=>$user,
-            'questions'=>$questions,
-            'answers'=>$answers
+        $data = [
+            'user' => $user,
+            'questions' => $questions,
+            'answers' => $answers
         ];
 
 
@@ -130,14 +131,14 @@ class CommonController extends Controller
      */
     public function getUserAnswer()
     {
-        if(! $this->isUserExists())
+        if (!$this->isUserExists())
             return err('user_id or user not exit');
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5);
 
-        $answers=answerins()
-            ->orderBy('created_at','desc')
-            ->where(['user_id'=>rq('id')])
+        $answers = answerins()
+            ->orderBy('created_at', 'desc')
+            ->where(['user_id' => rq('id')])
             ->with('question')
             ->limit($l['limit'])
             ->skip($l['skip'])
@@ -153,14 +154,14 @@ class CommonController extends Controller
      */
     public function getUserQuestion()
     {
-        if(! $this->isUserExists())
+        if (!$this->isUserExists())
             return err('user_id or user not exit');
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5);
 
-        $questions=quesins()
-            ->orderBy('created_at','desc')
-            ->where(['user_id'=>rq('id')])
+        $questions = quesins()
+            ->orderBy('created_at', 'desc')
+            ->where(['user_id' => rq('id')])
             ->limit($l['limit'])
             ->skip($l['skip'])
             ->get()
@@ -174,9 +175,9 @@ class CommonController extends Controller
      */
     public function isUserExists()
     {
-        if(!rq('id'))
+        if (!rq('id'))
             return false;
-        if( ! userins()->find(rq('id')) )
+        if (!userins()->find(rq('id')))
             return false;
         return true;
     }
@@ -189,16 +190,16 @@ class CommonController extends Controller
     {
 
 
-        if(!rq('question_id'))
+        if (!rq('question_id'))
             return err('question_id is not exists');
 
-        if(!quesins()->find(rq('question_id')))
+        if (!quesins()->find(rq('question_id')))
             return err('the question is not exists');
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5);
 
-        $answers=answerins()->orderBy('created_at','desc')
-            ->where(['question_id'=>rq('question_id')])
+        $answers = answerins()->orderBy('created_at', 'desc')
+            ->where(['question_id' => rq('question_id')])
             ->with('user')
             ->with('users')
             ->limit($l['limit'])
@@ -216,16 +217,16 @@ class CommonController extends Controller
      */
     public function getAnswerAndQuestion()
     {
-        if(!rq('answer_id'))
+        if (!rq('answer_id'))
             return err('that no answer id!');
 
-        $answer=answerins()
-            ->where(['id'=>rq('answer_id')])
+        $answer = answerins()
+            ->where(['id' => rq('answer_id')])
             ->with('question')
             ->with('user')
             ->first();
 
-        if(!$answer)
+        if (!$answer)
             return err('that no answer!');
 
 
@@ -239,30 +240,28 @@ class CommonController extends Controller
      */
     public function getComments()
     {
-        if(!rq('answer_id'))
+        if (!rq('answer_id'))
             return err('that no answer id!');
 
 
-        if( ! answerins()->find(rq('answer_id')) )
+        if (!answerins()->find(rq('answer_id')))
             return err('that no answer!');
 
-        $l=get_limit_and_skip(5);
+        $l = get_limit_and_skip(5);
 
-        $comments=commentins()
-            ->orderBy('created_at','desc')
-            ->where(['answer_id'=>rq('answer_id')])
+        $comments = commentins()
+            ->orderBy('created_at', 'desc')
+            ->where(['answer_id' => rq('answer_id')])
             ->with('user')
             ->limit($l['limit'])
             ->skip($l['skip'])
             ->get()
             ->keyBy('id');
 
-        $data=['status'=>1,'comments'=>$comments];
+        $data = ['status' => 1, 'comments' => $comments];
 
         return $data;
     }
-
-
 
 
     /**
@@ -271,8 +270,7 @@ class CommonController extends Controller
      */
     public function test()
     {
-        dd('test');
-
+        return TencentHelper::GetPushUrl(BIZID,1,PUSH_SECRET_KEY,time());
     }
 
 

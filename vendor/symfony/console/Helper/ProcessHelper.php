@@ -30,7 +30,7 @@ class ProcessHelper extends Helper
      * @param OutputInterface      $output    An OutputInterface instance
      * @param string|array|Process $cmd       An instance of Process or an array of arguments to escape and run or a command to run
      * @param string|null          $error     An error message that must be displayed if something went wrong
-     * @param callable|null        $callback  A PHP Callback to run whenever there is some
+     * @param callable|null        $callback  A PHP callback to run whenever there is some
      *                                        output available on STDOUT or STDERR
      * @param int                  $verbosity The threshold for verbosity
      *
@@ -83,7 +83,7 @@ class ProcessHelper extends Helper
      * @param OutputInterface $output   An OutputInterface instance
      * @param string|Process  $cmd      An instance of Process or a command to run
      * @param string|null     $error    An error message that must be displayed if something went wrong
-     * @param callable|null   $callback A PHP Callback to run whenever there is some
+     * @param callable|null   $callback A PHP callback to run whenever there is some
      *                                  output available on STDOUT or STDERR
      *
      * @return Process The process that ran
@@ -104,7 +104,7 @@ class ProcessHelper extends Helper
     }
 
     /**
-     * Wraps a Process Callback to add debugging output.
+     * Wraps a Process callback to add debugging output.
      *
      * @param OutputInterface $output   An OutputInterface interface
      * @param Process         $process  The Process

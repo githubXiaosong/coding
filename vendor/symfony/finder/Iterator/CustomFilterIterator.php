@@ -35,7 +35,7 @@ class CustomFilterIterator extends FilterIterator
     {
         foreach ($filters as $filter) {
             if (!is_callable($filter)) {
-                throw new \InvalidArgumentException('Invalid PHP Callback.');
+                throw new \InvalidArgumentException('Invalid PHP callback.');
             }
         }
         $this->filters = $filters;

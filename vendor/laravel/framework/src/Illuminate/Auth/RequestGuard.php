@@ -10,7 +10,7 @@ class RequestGuard implements Guard
     use GuardHelpers;
 
     /**
-     * The guard Callback.
+     * The guard callback.
      *
      * @var callable
      */

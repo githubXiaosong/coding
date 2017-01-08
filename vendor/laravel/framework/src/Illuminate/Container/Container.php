@@ -414,7 +414,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Bind a new Callback to an abstract's rebind event.
+     * Bind a new callback to an abstract's rebind event.
      *
      * @param  string    $abstract
      * @param  \Closure  $callback
@@ -541,7 +541,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Get the proper reflection instance for the given Callback.
+     * Get the proper reflection instance for the given callback.
      *
      * @param  callable|string  $callback
      * @return \ReflectionFunctionAbstract
@@ -886,7 +886,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register a new resolving Callback.
+     * Register a new resolving callback.
      *
      * @param  string    $abstract
      * @param  \Closure|null  $callback
@@ -902,7 +902,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register a new after resolving Callback for all types.
+     * Register a new after resolving callback for all types.
      *
      * @param  string   $abstract
      * @param  \Closure|null $callback
@@ -918,7 +918,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register a new resolving Callback by type of its first argument.
+     * Register a new resolving callback by type of its first argument.
      *
      * @param  \Closure  $callback
      * @return void
@@ -935,7 +935,7 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
-     * Register a new after resolving Callback by type of its first argument.
+     * Register a new after resolving callback by type of its first argument.
      *
      * @param  \Closure  $callback
      * @return void

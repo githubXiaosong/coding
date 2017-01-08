@@ -6,9 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateTableCategories' => $baseDir . '/database/migrations/2016_12_28_145509_create_table_categories.php',
-    'CreateTableRooms' => $baseDir . '/database/migrations/2016_12_28_140645_create_table_rooms.php',
-    'CreateTableUsers' => $baseDir . '/database/migrations/2016_12_23_051113_create_table_users.php',
+    'CreateTableGroups' => $baseDir . '/database/migrations/2017_01_01_120924_create_table_groups.php',
+    'CreateTableLivers' => $baseDir . '/database/migrations/2017_01_01_120846_create_table_livers.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
@@ -98,7 +97,7 @@ return array(
     'PHPUnit_Framework_Constraint_ArrayHasKey' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php',
     'PHPUnit_Framework_Constraint_ArraySubset' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php',
     'PHPUnit_Framework_Constraint_Attribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Attribute.php',
-    'PHPUnit_Framework_Constraint_Callback' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Callback.php',
+    'PHPUnit_Framework_Constraint_Callback' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/callback.php',
     'PHPUnit_Framework_Constraint_ClassHasAttribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php',
     'PHPUnit_Framework_Constraint_ClassHasStaticAttribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php',
     'PHPUnit_Framework_Constraint_Composite' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Composite.php',

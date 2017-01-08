@@ -25,7 +25,7 @@ namespace Symfony\Polyfill\Mbstring;
  * - mb_http_output          - Set/Get HTTP output character encoding
  * - mb_internal_encoding    - Set/Get internal character encoding
  * - mb_list_encodings       - Returns an array of all supported encodings
- * - mb_output_handler       - Callback function converts character encoding in output buffer
+ * - mb_output_handler       - callback function converts character encoding in output buffer
  * - mb_strlen               - Get string length
  * - mb_strpos               - Find position of first occurrence of string in a string
  * - mb_strrpos              - Find position of last occurrence of a string in a string

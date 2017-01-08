@@ -141,7 +141,7 @@ abstract class AbstractCloner implements ClonerInterface
     /**
      * Adds casters for resources and objects.
      *
-     * Maps resources or objects types to a Callback.
+     * Maps resources or objects types to a callback.
      * Types are in the key, with a callable caster for value.
      * Resource types are to be prefixed with a `:`,
      * see e.g. static::$defaultCasters.

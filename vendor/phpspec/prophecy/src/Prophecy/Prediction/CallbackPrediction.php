@@ -18,7 +18,7 @@ use Prophecy\Exception\InvalidArgumentException;
 use Closure;
 
 /**
- * Callback prediction.
+ * callback prediction.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
@@ -27,9 +27,9 @@ class CallbackPrediction implements PredictionInterface
     private $callback;
 
     /**
-     * Initializes Callback prediction.
+     * Initializes callback prediction.
      *
-     * @param callable $callback Custom Callback
+     * @param callable $callback Custom callback
      *
      * @throws \Prophecy\Exception\InvalidArgumentException
      */
@@ -46,7 +46,7 @@ class CallbackPrediction implements PredictionInterface
     }
 
     /**
-     * Executes preset Callback.
+     * Executes preset callback.
      *
      * @param Call[]         $calls
      * @param ObjectProphecy $object

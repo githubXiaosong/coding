@@ -32,14 +32,14 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     protected $convertedFiles;
 
     /**
-     * The user resolver Callback.
+     * The user resolver callback.
      *
      * @var \Closure
      */
     protected $userResolver;
 
     /**
-     * The route resolver Callback.
+     * The route resolver callback.
      *
      * @var \Closure
      */
@@ -906,7 +906,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Get the user resolver Callback.
+     * Get the user resolver callback.
      *
      * @return \Closure
      */
@@ -918,7 +918,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Set the user resolver Callback.
+     * Set the user resolver callback.
      *
      * @param  \Closure  $callback
      * @return $this
@@ -931,7 +931,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Get the route resolver Callback.
+     * Get the route resolver callback.
      *
      * @return \Closure
      */
@@ -943,7 +943,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Set the route resolver Callback.
+     * Set the route resolver callback.
      *
      * @param  \Closure  $callback
      * @return $this

@@ -101,14 +101,14 @@ class Gate implements GateContract
         } elseif (is_string($callback) && Str::contains($callback, '@')) {
             $this->abilities[$ability] = $this->buildAbilityCallback($callback);
         } else {
-            throw new InvalidArgumentException("Callback must be a callable or a 'Class@method' string.");
+            throw new InvalidArgumentException("callback must be a callable or a 'Class@method' string.");
         }
 
         return $this;
     }
 
     /**
-     * Create the ability Callback for a Callback string.
+     * Create the ability callback for a callback string.
      *
      * @param  string  $callback
      * @return \Closure
@@ -137,7 +137,7 @@ class Gate implements GateContract
     }
 
     /**
-     * Register a Callback to run before all Gate checks.
+     * Register a callback to run before all Gate checks.
      *
      * @param  callable  $callback
      * @return $this
@@ -150,7 +150,7 @@ class Gate implements GateContract
     }
 
     /**
-     * Register a Callback to run after all Gate checks.
+     * Register a callback to run after all Gate checks.
      *
      * @param  callable  $callback
      * @return $this
@@ -251,7 +251,7 @@ class Gate implements GateContract
     }
 
     /**
-     * Resolve and call the appropriate authorization Callback.
+     * Resolve and call the appropriate authorization callback.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @param  string  $ability
@@ -347,7 +347,7 @@ class Gate implements GateContract
     }
 
     /**
-     * Resolve the Callback for a policy check.
+     * Resolve the callback for a policy check.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @param  string  $ability
@@ -361,7 +361,7 @@ class Gate implements GateContract
 
             if (method_exists($instance, 'before')) {
                 // We will prepend the user and ability onto the arguments so that the before
-                // Callback can determine which ability is being called. Then we will call
+                // callback can determine which ability is being called. Then we will call
                 // into the policy before methods with the arguments and get the result.
                 $beforeArguments = array_merge([$user, $ability], $arguments);
 

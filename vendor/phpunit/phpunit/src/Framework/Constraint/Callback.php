@@ -54,6 +54,6 @@ class PHPUnit_Framework_Constraint_Callback extends PHPUnit_Framework_Constraint
      */
     public function toString()
     {
-        return 'is accepted by specified Callback';
+        return 'is accepted by specified callback';
     }
 }

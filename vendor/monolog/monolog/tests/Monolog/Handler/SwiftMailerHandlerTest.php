@@ -33,7 +33,7 @@ class SwiftMailerHandlerTest extends TestCase
             ->method('send');
 
         $callback = function () {
-            throw new \RuntimeException('Swift_Message creation Callback should not have been called in this test');
+            throw new \RuntimeException('Swift_Message creation callback should not have been called in this test');
         };
         $handler = new SwiftMailerHandler($this->mailer, $callback);
 
@@ -56,7 +56,7 @@ class SwiftMailerHandlerTest extends TestCase
                     && $value === $expectedMessage;
             }));
 
-        // Callback dynamically changes subject based on number of logged records
+        // callback dynamically changes subject based on number of logged records
         $callback = function ($content, array $records) use ($expectedMessage) {
             $subject = count($records) > 0 ? 'Emergency' : 'Normal';
             $expectedMessage->setSubject($subject);

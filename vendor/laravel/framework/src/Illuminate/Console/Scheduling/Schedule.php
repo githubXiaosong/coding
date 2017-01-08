@@ -15,7 +15,7 @@ class Schedule
     protected $events = [];
 
     /**
-     * Add a new Callback event to the schedule.
+     * Add a new callback event to the schedule.
      *
      * @param  string  $callback
      * @param  array   $parameters

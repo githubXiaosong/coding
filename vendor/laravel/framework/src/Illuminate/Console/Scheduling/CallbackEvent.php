@@ -9,7 +9,7 @@ use Illuminate\Contracts\Container\Container;
 class CallbackEvent extends Event
 {
     /**
-     * The Callback to call.
+     * The callback to call.
      *
      * @var string
      */
@@ -38,7 +38,7 @@ class CallbackEvent extends Event
 
         if (! is_string($this->callback) && ! is_callable($this->callback)) {
             throw new InvalidArgumentException(
-                'Invalid scheduled Callback event. Must be string or callable.'
+                'Invalid scheduled callback event. Must be string or callable.'
             );
         }
     }

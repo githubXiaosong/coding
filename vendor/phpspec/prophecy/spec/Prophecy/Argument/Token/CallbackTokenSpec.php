@@ -37,6 +37,6 @@ class CallbackTokenSpec extends ObjectBehavior
 
     function its_string_representation_should_tell_that_its_callback()
     {
-        $this->__toString()->shouldReturn('Callback()');
+        $this->__toString()->shouldReturn('callback()');
     }
 }

@@ -245,7 +245,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * After an after validation Callback.
+     * After an after validation callback.
      *
      * @param  callable|string  $callback
      * @return $this

@@ -5,7 +5,7 @@ namespace Dotenv\Exception;
 use InvalidArgumentException;
 
 /**
- * This is the invalid Callback exception class.
+ * This is the invalid callback exception class.
  */
 class InvalidCallbackException extends InvalidArgumentException implements ExceptionInterface
 {

@@ -140,7 +140,7 @@ interface ConnectionInterface
     public function transactionLevel();
 
     /**
-     * Execute the given Callback in "dry run" mode.
+     * Execute the given callback in "dry run" mode.
      *
      * @param  \Closure  $callback
      * @return array

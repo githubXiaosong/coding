@@ -72,7 +72,7 @@ class AutoCompleter
     }
 
     /**
-     * The readline_completion_function Callback handler.
+     * The readline_completion_function callback handler.
      *
      * @see processCallback
      *
@@ -87,7 +87,7 @@ class AutoCompleter
     }
 
     /**
-     * Remove readline Callback handler on destruct.
+     * Remove readline callback handler on destruct.
      */
     public function __destruct()
     {

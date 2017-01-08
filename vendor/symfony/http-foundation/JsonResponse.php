@@ -58,13 +58,13 @@ class JsonResponse extends Response
     }
 
     /**
-     * Sets the JSONP Callback.
+     * Sets the JSONP callback.
      *
-     * @param string|null $callback The JSONP Callback or null to use none
+     * @param string|null $callback The JSONP callback or null to use none
      *
      * @return JsonResponse
      *
-     * @throws \InvalidArgumentException When the Callback name is not valid
+     * @throws \InvalidArgumentException When the callback name is not valid
      */
     public function setCallback($callback = null)
     {
@@ -74,7 +74,7 @@ class JsonResponse extends Response
             $parts = explode('.', $callback);
             foreach ($parts as $part) {
                 if (!preg_match($pattern, $part)) {
-                    throw new \InvalidArgumentException('The Callback name is not valid.');
+                    throw new \InvalidArgumentException('The callback name is not valid.');
                 }
             }
         }
@@ -148,7 +148,7 @@ class JsonResponse extends Response
     }
 
     /**
-     * Updates the content and headers according to the JSON data and Callback.
+     * Updates the content and headers according to the JSON data and callback.
      *
      * @return JsonResponse
      */
@@ -161,7 +161,7 @@ class JsonResponse extends Response
             return $this->setContent(sprintf('/**/%s(%s);', $this->callback, $this->data));
         }
 
-        // Only set the header when there is none or when it equals 'text/javascript' (from a previous update with Callback)
+        // Only set the header when there is none or when it equals 'text/javascript' (from a previous update with callback)
         // in order to not overwrite a custom definition.
         if (!$this->headers->has('Content-Type') || 'text/javascript' === $this->headers->get('Content-Type')) {
             $this->headers->set('Content-Type', 'application/json');

@@ -42,7 +42,7 @@ trait ConfirmableTrait
     }
 
     /**
-     * Get the default confirmation Callback.
+     * Get the default confirmation callback.
      *
      * @return \Closure
      */

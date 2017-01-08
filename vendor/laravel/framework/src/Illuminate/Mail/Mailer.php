@@ -186,7 +186,7 @@ class Mailer implements MailerContract, MailQueueContract
     {
         $callback = $this->buildQueueCallable($callback);
 
-        return $this->queue->push('mailer@handleQueuedMessage', compact('view', 'data', 'Callback'), $queue);
+        return $this->queue->push('mailer@handleQueuedMessage', compact('view', 'data', 'callback'), $queue);
     }
 
     /**
@@ -233,7 +233,7 @@ class Mailer implements MailerContract, MailQueueContract
     {
         $callback = $this->buildQueueCallable($callback);
 
-        return $this->queue->later($delay, 'mailer@handleQueuedMessage', compact('view', 'data', 'Callback'), $queue);
+        return $this->queue->later($delay, 'mailer@handleQueuedMessage', compact('view', 'data', 'callback'), $queue);
     }
 
     /**
@@ -288,11 +288,11 @@ class Mailer implements MailerContract, MailQueueContract
      */
     protected function getQueuedCallable(array $data)
     {
-        if (Str::contains($data['Callback'], 'SerializableClosure')) {
-            return unserialize($data['Callback'])->getClosure();
+        if (Str::contains($data['callback'], 'SerializableClosure')) {
+            return unserialize($data['callback'])->getClosure();
         }
 
-        return $data['Callback'];
+        return $data['callback'];
     }
 
     /**
@@ -405,7 +405,7 @@ class Mailer implements MailerContract, MailQueueContract
             return $this->container->make($callback)->mail($message);
         }
 
-        throw new InvalidArgumentException('Callback is not valid.');
+        throw new InvalidArgumentException('callback is not valid.');
     }
 
     /**

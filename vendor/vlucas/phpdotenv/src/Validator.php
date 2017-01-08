@@ -95,7 +95,7 @@ class Validator
     }
 
     /**
-     * Assert that the Callback returns true for each variable.
+     * Assert that the callback returns true for each variable.
      *
      * @param callable $callback
      * @param string   $message
@@ -104,10 +104,10 @@ class Validator
      *
      * @return \Dotenv\Validator
      */
-    protected function assertCallback($callback, $message = 'failed Callback assertion')
+    protected function assertCallback($callback, $message = 'failed callback assertion')
     {
         if (!is_callable($callback)) {
-            throw new InvalidCallbackException('The provided Callback must be callable.');
+            throw new InvalidCallbackException('The provided callback must be callable.');
         }
 
         $variablesFailingAssertion = array();

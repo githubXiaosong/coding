@@ -38,7 +38,7 @@ class Arr
     }
 
     /**
-     * Build a new array using a Callback.
+     * Build a new array using a callback.
      *
      * @param  array  $array
      * @param  callable  $callback
@@ -448,7 +448,7 @@ class Arr
     }
 
     /**
-     * Sort the array using the given Callback.
+     * Sort the array using the given callback.
      *
      * @param  array  $array
      * @param  callable  $callback
@@ -483,7 +483,7 @@ class Arr
     }
 
     /**
-     * Filter the array using the given Callback.
+     * Filter the array using the given callback.
      *
      * @param  array  $array
      * @param  callable  $callback

@@ -339,8 +339,8 @@ class Builder
         $results = $this->forPage($page = 1, $count)->get();
 
         while (count($results) > 0) {
-            // On each chunk result set, we will pass them to the Callback and then let the
-            // developer take care of everything within the Callback, which allows us to
+            // On each chunk result set, we will pass them to the callback and then let the
+            // developer take care of everything within the callback, which allows us to
             // keep the memory low for spinning through large result sets for working.
             if (call_user_func($callback, $results) === false) {
                 return false;
@@ -355,7 +355,7 @@ class Builder
     }
 
     /**
-     * Execute a Callback over each item while chunking.
+     * Execute a callback over each item while chunking.
      *
      * @param  callable  $callback
      * @param  int  $count
@@ -772,7 +772,7 @@ class Builder
         $relations = explode('.', $relations);
 
         // In order to nest "has", we need to add count relation constraints on the
-        // Callback Closure. We'll do this by simply passing the Closure its own
+        // callback Closure. We'll do this by simply passing the Closure its own
         // reference to itself so it calls itself recursively on each segment.
         $closure = function ($q) use (&$closure, &$relations, $operator, $count, $boolean, $callback) {
             if (count($relations) > 1) {
@@ -1265,7 +1265,7 @@ class Builder
     }
 
     /**
-     * Extend the builder with a given Callback.
+     * Extend the builder with a given callback.
      *
      * @param  string    $name
      * @param  \Closure  $callback

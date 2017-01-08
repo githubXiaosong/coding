@@ -129,7 +129,7 @@ class Loop
     }
 
     /**
-     * A beforeLoop Callback.
+     * A beforeLoop callback.
      *
      * This is executed at the start of each loop iteration. In the default
      * (non-forking) loop implementation, this is a no-op.
@@ -140,7 +140,7 @@ class Loop
     }
 
     /**
-     * A afterLoop Callback.
+     * A afterLoop callback.
      *
      * This is executed at the end of each loop iteration. In the default
      * (non-forking) loop implementation, this is a no-op.

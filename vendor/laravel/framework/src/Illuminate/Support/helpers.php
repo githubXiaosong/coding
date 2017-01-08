@@ -46,7 +46,7 @@ if (! function_exists('array_add')) {
 
 if (! function_exists('array_build')) {
     /**
-     * Build a new array using a Callback.
+     * Build a new array using a callback.
      *
      * @param  array  $array
      * @param  callable  $callback
@@ -279,7 +279,7 @@ if (! function_exists('array_set')) {
 
 if (! function_exists('array_sort')) {
     /**
-     * Sort the array using the given Callback.
+     * Sort the array using the given callback.
      *
      * @param  array  $array
      * @param  callable  $callback
@@ -306,7 +306,7 @@ if (! function_exists('array_sort_recursive')) {
 
 if (! function_exists('array_where')) {
     /**
-     * Filter the array using the given Callback.
+     * Filter the array using the given callback.
      *
      * @param  array  $array
      * @param  callable  $callback

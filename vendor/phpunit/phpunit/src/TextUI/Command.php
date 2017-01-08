@@ -183,7 +183,7 @@ class PHPUnit_TextUI_Command
      *
      * A child class of PHPUnit_TextUI_Command can hook into the argument
      * parsing by adding the switch(es) to the $longOptions array and point to a
-     * Callback method that handles the switch(es) in the child class like this
+     * callback method that handles the switch(es) in the child class like this
      *
      * <code>
      * <?php
@@ -986,7 +986,7 @@ EOT;
     }
 
     /**
-     * Custom Callback for test suite discovery.
+     * Custom callback for test suite discovery.
      */
     protected function handleCustomTestSuite()
     {
