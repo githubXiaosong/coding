@@ -14,9 +14,9 @@ namespace Symfony\Component\HttpFoundation;
 /**
  * StreamedResponse represents a streamed HTTP response.
  *
- * A StreamedResponse uses a callback for its content.
+ * A StreamedResponse uses a Callback for its content.
  *
- * The callback should use the standard PHP functions like echo
+ * The Callback should use the standard PHP functions like echo
  * to stream the response back to the client. The flush() method
  * can also be used if needed.
  *
@@ -32,7 +32,7 @@ class StreamedResponse extends Response
     /**
      * Constructor.
      *
-     * @param callable|null $callback A valid PHP callback or null to set it later
+     * @param callable|null $callback A valid PHP Callback or null to set it later
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
      */
@@ -49,7 +49,7 @@ class StreamedResponse extends Response
     /**
      * Factory method for chainability.
      *
-     * @param callable|null $callback A valid PHP callback or null to set it later
+     * @param callable|null $callback A valid PHP Callback or null to set it later
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
      *
@@ -61,9 +61,9 @@ class StreamedResponse extends Response
     }
 
     /**
-     * Sets the PHP callback associated with this Response.
+     * Sets the PHP Callback associated with this Response.
      *
-     * @param callable $callback A valid PHP callback
+     * @param callable $callback A valid PHP Callback
      */
     public function setCallback(callable $callback)
     {
@@ -84,7 +84,7 @@ class StreamedResponse extends Response
         $this->streamed = true;
 
         if (null === $this->callback) {
-            throw new \LogicException('The Response callback must not be null.');
+            throw new \LogicException('The Response Callback must not be null.');
         }
 
         call_user_func($this->callback);

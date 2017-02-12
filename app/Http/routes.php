@@ -1,175 +1,50 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-/*通用方法*/
-
-function liverins()
-{
-    return new App\Liver;
-}
-
-function groupins()
-{
-    return new App\Group;
-}
-
- function callbackins()
- {
-    return new \App\callback\Live_Callback;
- }
-
- function get_limit_and_skip($limit = null,$page)//是不穿为空 而不是穿了null为空
-{
-    return ['limit' => $limit?:15, 'skip' => ($page ? ($page - 1) : 0) * $limit];
-}
-
- function rq($key=null)
+function rq($key=null)
 {
     return ($key==null) ? Request::all() : Request::get($key);
 }
 
-function suc($data=null){
 
-    $ram=['status'=>0];
-
-    if($data)
-    {
-         $ram['data']=$data;
-
-        return $ram;
-    }
-    return $ram;
-}
-
-function err($msg='error',$data=null){
-    if($data)
-        return array_merge(['status'=>2,'msg'=>$msg],$data);
-    return ['status'=>1,'msg'=>$msg];
-}
-
-function isLogin()
-{
-    return userins()->is_login();
-}
-
-
-
-
-//------------------------------------
-Route::group(['middleware'=>['web']],function(){//不开启web中间件是不能使用session的 但是开启之后不能接受非表单的POST请求
-
-
-
-    Route::get('/', function ()
-    {
-        return view('index');
-    });
-
-
-    /**
-     * 各种model中的方法
-     */
-    Route::any('api/user',function(){
-        return userins()->signup();
-    });
-
-    Route::any('api/login',function(){
-        return userins()->login();
-    });
-
-    Route::any('api/logout',function(){
-        return userins()->logout();
-    });
-
-    /**
-     * Controller中的各种API
-     */
-    Route::any('api/timeline','CommonController@timeLine');
-
-
-    /**
-     * 对客户端接口
-     */
-
-    Route::any('api/interface/RequestLVBAddr',function(){
-        return (new \App\Inter\RequestLVBAddr)->process();
-    });
-
-    Route::any('api/interface/FetchList',function(){
-        return (new \App\Inter\FetchList)->process();
-    });
-
-    Route::any('api/interface/ChangeStatus',function(){
-        return (new \App\Inter\ChangeStatus)->process();
-    });
-
-    Route::any('api/interface/EnterGroup',function(){
-        return (new \App\Inter\EnterGroup)->process();
-    });
-
-    Route::any('api/interface/FetchGroupMemberList',function(){
-        return (new \App\Inter\FetchGroupMemberList)->process();
-    });
-
-    Route::any('api/interface/ForbidLive',function(){
-        return (new \App\Inter\ForbidLive)->process();
-    });
-
-    Route::any('api/interface/GetCOSSign',function(){
-        return (new \App\Inter\GetCOSSign)->process();
-    });
-
-    Route::any('api/interface/GetCOSSign',function(){
-        return (new \App\Inter\GetLiverInfo)->process();
-    });
-
-    Route::any('api/interface/QuitGroup',function(){
-        return (new \App\Inter\QuitGroup)->process();
-    });
-
-    Route::any('api/interface/RequestLVBAddr',function(){
-        return (new \App\Inter\RequestLVBAddr)->process();
-    });
-
-
-
-
-    /**
-     *   测试API
-     */
+//todo 有必要检查接口的访问次数  用中间件
+Route::group(['middleware'=>['web']],function(){
+/**
+ *   测试API
+ */
     Route::any('api/test','CommonController@test');
 
-});
+/**
+ * 回调页面
+ */
+    Route::any('callback','Server\CallBackController@liveCallBack');
+    Route::any('checkOnlineStatus','Server\CallBackController@checkOnlineStatus');
 
 /**
- * callback
+ * 返回view页面
  */
-Route::any('api/callback',function(){
-    return callbackins()->process();
-});
+    Route::get('home', 'Page\HomeController@index');
+    Route::get('live', 'Page\LiveController@index');
+    Route::get('category', 'Page\CategoryController@index');
+    Route::group(['middleware'=>['checkAuth']],function(){
+        Route::get('user/data', 'Page\UserController@data');
+        Route::get('user/live', 'Page\UserController@live');
+        Route::get('user/like', 'Page\UserController@like');
+        Route::get('user/question', 'Page\UserController@question');
+    });
 
+/**
+ * 服务  这边的接口都需要添加csrf校验
+ */
+    Route::get('getCategory', 'Service\CategoryController@getCategory');
+    Route::get('createCode', 'Service\ValidateController@createCode');
+    Route::get('logout', 'Service\UserController@logout');
+    Route::post('sendSMS', 'Service\ValidateController@sendSMS');
+    Route::post('register', 'Service\UserController@register');
+    Route::post('login', 'Service\UserController@login');
+    Route::post('enterGroup', 'Service\LiveController@enterGroup');
+    Route::post('quitGroup', 'Service\LiveController@quitGroup');
+    Route::group(['middleware'=>['checkAuth']],function(){
+        Route::post('createLive', 'Service\LiveController@createLive');
+        Route::post('changeTitle', 'Service\LiveController@changeTitle');
+    });
 
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
-Route::group(['middleware' => ['web']], function () {
-    //
 });

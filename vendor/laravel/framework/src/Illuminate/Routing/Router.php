@@ -394,7 +394,7 @@ class Router implements RegistrarContract
 
         // Once we have updated the group stack, we will execute the user Closure and
         // merge in the groups attributes when the route is created. After we have
-        // run the callback, we will pop the attributes off of this group stack.
+        // run the Callback, we will pop the attributes off of this group stack.
         call_user_func($callback, $this);
 
         array_pop($this->groupStack);
@@ -875,7 +875,7 @@ class Router implements RegistrarContract
     }
 
     /**
-     * Call the binding callback for the given key.
+     * Call the binding Callback for the given key.
      *
      * @param  string  $key
      * @param  string  $value
@@ -998,7 +998,7 @@ class Router implements RegistrarContract
                 return $model;
             }
 
-            // If a callback was supplied to the method we will call that to determine
+            // If a Callback was supplied to the method we will call that to determine
             // what we should do when the model is not found. This just gives these
             // developer a little greater flexibility to decide what will happen.
             if ($callback instanceof Closure) {

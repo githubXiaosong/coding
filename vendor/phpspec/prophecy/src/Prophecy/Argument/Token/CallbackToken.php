@@ -14,7 +14,7 @@ namespace Prophecy\Argument\Token;
 use Prophecy\Exception\InvalidArgumentException;
 
 /**
- * callback-verified token.
+ * Callback-verified token.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
@@ -42,7 +42,7 @@ class CallbackToken implements TokenInterface
     }
 
     /**
-     * Scores 7 if callback returns true, false otherwise.
+     * Scores 7 if Callback returns true, false otherwise.
      *
      * @param $argument
      *
@@ -70,6 +70,6 @@ class CallbackToken implements TokenInterface
      */
     public function __toString()
     {
-        return 'callback()';
+        return 'Callback()';
     }
 }

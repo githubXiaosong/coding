@@ -685,7 +685,7 @@ class Framework_MockObjectTest extends PHPUnit_Framework_TestCase
 
         $foo->expects($this->any())
             ->method('bar')
-            ->will($this->returnCallback(array($foo, 'callback')));
+            ->will($this->returnCallback(array($foo, 'Callback')));
 
         $a = $b = $c = 0;
 
@@ -736,7 +736,7 @@ class Framework_MockObjectTest extends PHPUnit_Framework_TestCase
         $foo->expects($this->any())
             ->method('bar')
             ->with($a, $b, $c)
-            ->will($this->returnCallback(array($foo, 'callback')));
+            ->will($this->returnCallback(array($foo, 'Callback')));
 
         $foo->bar($a, $b, $c);
     }
@@ -758,7 +758,7 @@ class Framework_MockObjectTest extends PHPUnit_Framework_TestCase
         $foo->expects($this->any())
             ->method('bar')
             ->with($this->isInstanceOf("stdClass"), $b, $c)
-            ->will($this->returnCallback(array($foo, 'callback')));
+            ->will($this->returnCallback(array($foo, 'Callback')));
 
         $foo->bar($a, $b, $c);
     }

@@ -253,8 +253,15 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
     );
 
     public static $classMap = array (
-        'CreateTableGroups' => __DIR__ . '/../..' . '/database/migrations/2017_01_01_120924_create_table_groups.php',
-        'CreateTableLivers' => __DIR__ . '/../..' . '/database/migrations/2017_01_01_120846_create_table_livers.php',
+        'AlertTableLivesPushaddr' => __DIR__ . '/../..' . '/database/migrations/2017_02_01_125548_alert_table_lives_pushaddr.php',
+        'CreateTableCategories' => __DIR__ . '/../..' . '/database/migrations/2017_02_05_133611_create_table_categories.php',
+        'CreateTableCategoryLive' => __DIR__ . '/../..' . '/database/migrations/2017_02_05_134025_create_table_category_live.php',
+        'CreateTableLiveUserWatching' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091732_create_table_live_user_watching.php',
+        'CreateTableLives' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091533_create_table_lives.php',
+        'CreateTableTapeUserLike' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091809_create_table_tape_user_like.php',
+        'CreateTableTapeUserWatched' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091809_create_table_tape_user_watched.php',
+        'CreateTableTapes' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091556_create_table_tapes.php',
+        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091515_create_table_users.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -344,7 +351,7 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
         'PHPUnit_Framework_Constraint_ArrayHasKey' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php',
         'PHPUnit_Framework_Constraint_ArraySubset' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php',
         'PHPUnit_Framework_Constraint_Attribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Attribute.php',
-        'PHPUnit_Framework_Constraint_Callback' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/callback.php',
+        'PHPUnit_Framework_Constraint_Callback' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Callback.php',
         'PHPUnit_Framework_Constraint_ClassHasAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php',
         'PHPUnit_Framework_Constraint_ClassHasStaticAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php',
         'PHPUnit_Framework_Constraint_Composite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Constraint/Composite.php',

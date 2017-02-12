@@ -485,3 +485,66 @@ Schema::table('users', function ($table) {
     $table->renameColumn('from', 'to');
 });
 以及外键的增删改查都存在
+
+pluck 勇气 拔掉 查 拽
+
+object转换成数组  json_encode(json_decode(x,true))
+
+1_9
+strval() 除了数组以外的其他形式转换为字符串
+
+1_11
+shift 改变 换挡 摆脱
+
+1_17
+strtotime 好用的很
+echo(strtotime("now") . "<br>");
+echo(strtotime("15 October 1980") . "<br>");
+echo(strtotime("+5 hours") . "<br>");
+echo(strtotime("+1 week") . "<br>");
+echo(strtotime("+1 week 3 days 7 hours 5 seconds") . "<br>");
+echo(strtotime("next Monday") . "<br>");
+echo(strtotime("last Sunday"));
+
+1_18
+ui-route 中添加链接 :ui-sref="home"
+
+1_21
+直播无权限  视频高级会员可以看
+
+1_25
+那个validate 验证长度的时候不要加integer min和max及就是字符串的长度了
+ng-model只能用小写字母的
+加User 才能用UserService中的内容
+
+1_26
+在视图页面中 PHP对象不用'.' 要用'->'
+
+1_30
+click事件之后的this是不能直接使用的  $(this)才是点击的底层元素
+
+2_1
+凡是jq封装的方法 用的时候要加$() => $(this)   而js的原生方法用的时候直接this
+
+DB默认不维护时间戳
+
+不要用表单的默认提交action 做不了接口了
+
+2_2
+没有什么重量级逻辑可以直接在html中调用接口 不用每次都写js
+file_get_contents("http://127.0.0.1/laravel/coding/public/getCategory") 直接访问接口只能get
+
+2_8
+{{ \Illuminate\Support\Facades\Request::is('user/data') ? 'active' : '' }} 路径导航
+
+2_10
+js 得到url参数
+function () {
+            function getParams(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return decodeURIComponent(r[2]);
+                }
+                return null;
+            }

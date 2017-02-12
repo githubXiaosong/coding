@@ -67,7 +67,7 @@ EOS;
     }
 
     /**
-     * callback for Str::unvis.
+     * Callback for Str::unvis.
      *
      * @param array $match The matches passed by preg_replace_callback
      *

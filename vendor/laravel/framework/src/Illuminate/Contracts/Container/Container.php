@@ -125,7 +125,7 @@ interface Container
     public function resolved($abstract);
 
     /**
-     * Register a new resolving callback.
+     * Register a new resolving Callback.
      *
      * @param  string    $abstract
      * @param  \Closure|null  $callback
@@ -134,7 +134,7 @@ interface Container
     public function resolving($abstract, Closure $callback = null);
 
     /**
-     * Register a new after resolving callback.
+     * Register a new after resolving Callback.
      *
      * @param  string    $abstract
      * @param  \Closure|null  $callback

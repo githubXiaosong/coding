@@ -180,21 +180,21 @@ class Process
     /**
      * Runs the process.
      *
-     * The callback receives the type of output (out or err) and
+     * The Callback receives the type of output (out or err) and
      * some bytes from the output in real-time. It allows to have feedback
      * from the independent process during execution.
      *
      * The STDOUT and STDERR are also available after the process is finished
      * via the getOutput() and getErrorOutput() methods.
      *
-     * @param callable|null $callback A PHP callback to run whenever there is some
+     * @param callable|null $callback A PHP Callback to run whenever there is some
      *                                output available on STDOUT or STDERR
      *
      * @return int The exit status code
      *
      * @throws RuntimeException When process can't be launched
      * @throws RuntimeException When process stopped after receiving signal
-     * @throws LogicException   In case a callback is provided and output has been disabled
+     * @throws LogicException   In case a Callback is provided and output has been disabled
      */
     public function run($callback = null)
     {
@@ -237,16 +237,16 @@ class Process
      *
      * The termination of the process can be awaited with wait().
      *
-     * The callback receives the type of output (out or err) and some bytes from
+     * The Callback receives the type of output (out or err) and some bytes from
      * the output in real-time while writing the standard input to the process.
      * It allows to have feedback from the independent process during execution.
      *
-     * @param callable|null $callback A PHP callback to run whenever there is some
+     * @param callable|null $callback A PHP Callback to run whenever there is some
      *                                output available on STDOUT or STDERR
      *
      * @throws RuntimeException When process can't be launched
      * @throws RuntimeException When process is already running
-     * @throws LogicException   In case a callback is provided and output has been disabled
+     * @throws LogicException   In case a Callback is provided and output has been disabled
      */
     public function start(callable $callback = null)
     {
@@ -254,7 +254,7 @@ class Process
             throw new RuntimeException('Process is already running');
         }
         if ($this->outputDisabled && null !== $callback) {
-            throw new LogicException('Output has been disabled, enable it to allow the use of a callback.');
+            throw new LogicException('Output has been disabled, enable it to allow the use of a Callback.');
         }
 
         $this->resetProcessData();
@@ -311,7 +311,7 @@ class Process
      *
      * Be warned that the process is cloned before being started.
      *
-     * @param callable|null $callback A PHP callback to run whenever there is some
+     * @param callable|null $callback A PHP Callback to run whenever there is some
      *                                output available on STDOUT or STDERR
      *
      * @return Process The new process
@@ -336,11 +336,11 @@ class Process
     /**
      * Waits for the process to terminate.
      *
-     * The callback receives the type of output (out or err) and some bytes
+     * The Callback receives the type of output (out or err) and some bytes
      * from the output in real-time while writing the standard input to the process.
      * It allows to have feedback from the independent process during execution.
      *
-     * @param callable|null $callback A valid PHP callback
+     * @param callable|null $callback A valid PHP Callback
      *
      * @return int The exitcode of the process
      *
@@ -1217,12 +1217,12 @@ class Process
     }
 
     /**
-     * Builds up the callback used by wait().
+     * Builds up the Callback used by wait().
      *
      * The callbacks adds all occurred output to the specific buffer and calls
-     * the user callback (if present) with the received output.
+     * the user Callback (if present) with the received output.
      *
-     * @param callable|null $callback The user defined PHP callback
+     * @param callable|null $callback The user defined PHP Callback
      *
      * @return \Closure A PHP closure
      */
@@ -1312,7 +1312,7 @@ class Process
     }
 
     /**
-     * Reads pipes, executes callback.
+     * Reads pipes, executes Callback.
      *
      * @param bool $blocking Whether to use blocking calls or not.
      * @param bool $close    Whether to close file handles or not.
@@ -1355,9 +1355,9 @@ class Process
             }
         }
 
-        // Free memory from self-reference callback created by buildCallback
+        // Free memory from self-reference Callback created by buildCallback
         // Doing so in other contexts like __destruct or by garbage collector is ineffective
-        // Now pipes are closed, so the callback is no longer necessary
+        // Now pipes are closed, so the Callback is no longer necessary
         $this->callback = null;
 
         return $this->exitcode;

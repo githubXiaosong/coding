@@ -87,7 +87,7 @@
         rmsPrefix = /^-ms-/,
         rdashAlpha = /-([\da-z])/gi,
 
-    // Used by jQuery.camelCase as callback to replace()
+    // Used by jQuery.camelCase as Callback to replace()
         fcamelCase = function( all, letter ) {
             return letter.toUpperCase();
         };
@@ -135,7 +135,7 @@
             return ret;
         },
 
-        // Execute a callback for every element in the matched set.
+        // Execute a Callback for every element in the matched set.
         // (You can seed the arguments with an array of args, but this is
         // only used internally.)
         each: function( callback, args ) {
@@ -3045,25 +3045,25 @@
     }
 
     /*
-     * Create a callback list using the following parameters:
+     * Create a Callback list using the following parameters:
      *
      *	options: an optional list of space-separated options that will change how
-     *			the callback list behaves or a more traditional option object
+     *			the Callback list behaves or a more traditional option object
      *
-     * By default a callback list will act like an event callback list and can be
+     * By default a Callback list will act like an event Callback list and can be
      * "fired" multiple times.
      *
      * Possible options:
      *
-     *	once:			will ensure the callback list can only be fired once (like a Deferred)
+     *	once:			will ensure the Callback list can only be fired once (like a Deferred)
      *
-     *	memory:			will keep track of previous values and will call any callback added
+     *	memory:			will keep track of previous values and will call any Callback added
      *					after the list has been fired right away with the latest "memorized"
      *					values (like a Deferred)
      *
-     *	unique:			will ensure a callback can only be added once (no duplicate in the list)
+     *	unique:			will ensure a Callback can only be added once (no duplicate in the list)
      *
-     *	stopOnFalse:	interrupt callings when a callback returns false
+     *	stopOnFalse:	interrupt callings when a Callback returns false
      *
      */
     jQuery.Callbacks = function( options ) {
@@ -3080,13 +3080,13 @@
             fired,
         // Flag to know if list is currently firing
             firing,
-        // First callback to fire (used internally by add and fireWith)
+        // First Callback to fire (used internally by add and fireWith)
             firingStart,
         // End of the loop when firing
             firingLength,
-        // Index of currently firing callback (modified by remove if needed)
+        // Index of currently firing Callback (modified by remove if needed)
             firingIndex,
-        // Actual callback list
+        // Actual Callback list
             list = [],
         // Stack of fire calls for repeatable lists
             stack = !options.once && [],
@@ -3119,7 +3119,7 @@
             },
         // Actual Callbacks object
             self = {
-                // Add a callback or a collection of callbacks to the list
+                // Add a Callback or a collection of callbacks to the list
                 add: function() {
                     if ( list ) {
                         // First, we save the current length
@@ -3150,7 +3150,7 @@
                     }
                     return this;
                 },
-                // Remove a callback from the list
+                // Remove a Callback from the list
                 remove: function() {
                     if ( list ) {
                         jQuery.each( arguments, function( _, arg ) {
@@ -3171,7 +3171,7 @@
                     }
                     return this;
                 },
-                // Check if a given callback is in the list.
+                // Check if a given Callback is in the list.
                 // If no argument is given, return whether or not list has callbacks attached.
                 has: function( fn ) {
                     return fn ? jQuery.inArray( fn, list ) > -1 : !!( list && list.length );
@@ -3377,7 +3377,7 @@
     var readyList;
 
     jQuery.fn.ready = function( fn ) {
-        // Add the callback
+        // Add the Callback
         jQuery.ready.promise().done( fn );
 
         return this;
@@ -3450,7 +3450,7 @@
 
             } else {
 
-                // Use the handy event callback
+                // Use the handy event Callback
                 document.addEventListener( "DOMContentLoaded", completed, false );
 
                 // A fallback to window.onload, that will always work
@@ -7998,7 +7998,7 @@
                         if ( map ) {
                             if ( state < 2 ) {
                                 for ( code in map ) {
-                                    // Lazy-add the new callback in a way that preserves old ones
+                                    // Lazy-add the new Callback in a way that preserves old ones
                                     statusCode[ code ] = [ statusCode[ code ], map[ code ] ];
                                 }
                             } else {
@@ -8178,7 +8178,7 @@
                 }
             }
 
-            // callback for when everything is done
+            // Callback for when everything is done
             function done( status, nativeStatusText, responses, headers ) {
                 var isSuccess, success, error, response, modified,
                     statusText = nativeStatusText;
@@ -8589,7 +8589,7 @@
                         xhr.setRequestHeader( i, headers[ i ] );
                     }
 
-                    // callback
+                    // Callback
                     callback = function( type ) {
                         return function() {
                             if ( callback ) {
@@ -8625,7 +8625,7 @@
                     xhr.onload = callback();
                     xhr.onerror = callback("error");
 
-                    // Create the abort callback
+                    // Create the abort Callback
                     callback = xhrCallbacks[ id ] = callback("abort");
 
                     try {
@@ -8737,12 +8737,12 @@
         // Handle iff the expected data type is "jsonp" or we have a parameter to set
         if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
-            // Get callback name, remembering preexisting value associated with it
+            // Get Callback name, remembering preexisting value associated with it
             callbackName = s.jsonpCallback = jQuery.isFunction( s.jsonpCallback ) ?
                 s.jsonpCallback() :
                 s.jsonpCallback;
 
-            // Insert callback into url or form data
+            // Insert Callback into url or form data
             if ( jsonProp ) {
                 s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
             } else if ( s.jsonp !== false ) {
@@ -8760,7 +8760,7 @@
             // force json dataType
             s.dataTypes[ 0 ] = "json";
 
-            // Install callback
+            // Install Callback
             overwritten = window[ callbackName ];
             window[ callbackName ] = function() {
                 responseContainer = arguments;
@@ -8776,7 +8776,7 @@
                     // make sure that re-using the options doesn't screw things around
                     s.jsonpCallback = originalSettings.jsonpCallback;
 
-                    // save the callback name for future use
+                    // save the Callback name for future use
                     oldCallbacks.push( callbackName );
                 }
 
@@ -8850,7 +8850,7 @@
         // If it's a function
         if ( jQuery.isFunction( params ) ) {
 
-            // We assume that it's the callback
+            // We assume that it's the Callback
             callback = params;
             params = undefined;
 
@@ -8870,7 +8870,7 @@
                 data: params
             }).done(function( responseText ) {
 
-                // Save response for use in complete callback
+                // Save response for use in complete Callback
                 response = arguments;
 
                 self.html( selector ?

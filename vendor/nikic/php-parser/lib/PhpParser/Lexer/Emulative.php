@@ -164,7 +164,7 @@ class Emulative extends \PhpParser\Lexer
     }
 
     /*
-     * This method is a callback for restoring EMU sequences in
+     * This method is a Callback for restoring EMU sequences in
      * multichar tokens (like strings) to their original value.
      */
     public function restoreContentCallback(array $matches) {

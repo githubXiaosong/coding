@@ -37,7 +37,7 @@ class Collection extends \ArrayObject
     protected static $keywords = array(
         'string', 'int', 'integer', 'bool', 'boolean', 'float', 'double',
         'object', 'mixed', 'array', 'resource', 'void', 'null', 'scalar',
-        'callback', 'callable', 'false', 'true', 'self', '$this', 'static'
+        'Callback', 'callable', 'false', 'true', 'self', '$this', 'static'
     );
 
     /**

@@ -192,7 +192,7 @@ class Str
     }
 
     /**
-     * Parse a Class@method style callback into class and method.
+     * Parse a Class@method style Callback into class and method.
      *
      * @param  string  $callback
      * @param  string  $default

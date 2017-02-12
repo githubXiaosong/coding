@@ -1,234 +1,82 @@
-*{
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    /*background: rgba(0,0,0,0.05);*/
-
-
-}
-body{
-    padding-top: 70px;
-}
-a{
-    text-decoration:none;
-}
-
-.fl{
-    float: left;
-}
-
-.fr{
-    float: right;
-}
-
-.clearfix:after,
-.clearfix:before{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.navbar{
-    background: #a10;
-    color: #fff;
-}
-
-.navbar a{
-    color: rgba(255,255,255,.95);
- }
-
-.navbar-item{
-    display: inline-block;
-    /*line-height: 2;*/
-    padding: 2px 4px;
-    margin-top: auto;
-margin-bottom: auto;
-
+body {
+    background: #ffffff;
 }
 
 
-.navbar-item:first-child{
-    margin-left: 4px;
+.nav-contain {
+
+    width: 95%;
 }
 
-.navbar-item:last-child{
-    margin-right: 4px;
-}
-
-
-.brand{
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.container{
-    width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 1000px;
-}
-
-.input-err-set{
-    display: inline-block;
-}
-
-.card{
-    margin: 2px;
-    margin-top: 8px;
-    padding: 5px;
-    padding-left: 10px;
-    display: block;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 2px 4px 2px rgba(0,0,0,.1);
-}
-
-#topForm{
-    display: inline-block;
-}
-#topForm button{
-    color: #a10;
-}
-
-.card input,
-.card textarea
-{
-    width: 90%;
-    padding: 5px;
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    outline: none;
-
-}
-
-label,form{
-    display: block;
-}
-label{
-    margin: 4px 0;
-}
-
-.input-err-set{
-    color: #a10;
-}
-
-button{
-
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    background: #fff;
-}
-button:hover{
-    background: #eeeeee;
-    cursor: pointer;
-}
-
-.content-owner-name{
-    display: inline-block;
-}
-.content-owner-desc{
-    display: inline-block;
-    color: gray;
-}
-.content-owner{
-    margin-top: 0px;
-}
-.content-title{
-    margin-bottom:0px;
-}
-
-.comment-item{
-    margin-left: 2%;
-
-}
-
-.comment-item h5{
+.n-mp-b {
     margin-bottom: 0px;
-    margin-top: 0px;
+    padding-bottom: 0px;
 }
 
-.comment-item-name{
-    float: left;
-    width: 6%;
-    display: inline-block;
-    margin-bottom: 0px;
+.container > div {
+    margin-top: 20px;
 }
-.item-content a{
-    color: #101010;
+
+.clearfix button {
+    vertical-align: bottom;
+    margin-top: 15px;
+    background: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: none;
 }
-.item-content a:hover{
+
+.clearfix button:hover {
+    vertical-align: bottom;
+    margin-top: 15px;
+    background: #555;
+    border: none;
+}
+
+.avatar {
+    height: 85px;
+    width: 85px;
+}
+
+.user-info {
+    padding: 20px;
+}
+
+.user-info-avatar {
+
+}
+
+.user-info-text {
+    line-height: 270%;
+    margin-left: 150px;
+}
+
+.user-info-text-label {
+
+}
+
+.big-panel {
+    width: 125%;
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.category-container {
+    padding: 20px;
+}
+
+.category-container a{
     text-decoration: none;
-}
 
-.comment-item-content{
-    float: right;
-    width: 94%;
-    margin-left: 30px;
-    display: inline-block;
 }
+.category-item {
+    margin: 10px 0px;
 
-.comment-set{
-    margin-top: 10px;
 }
+.category-item:hover {
 
-.item-set p{
-    font-size: 14px;
-}
-
-.comment-set p{
-    font-size: 8px;
-}
-
-.left-set{
-    margin-left: -7%;
-    position: absolute;
-}
-
-.left-set button{
-    border: 1px solid rgba(0,0,0,0);
-    display: block;
-    margin-bottom: 15px;
     cursor: pointer;
-}
-.list-group-item button:disabled,
-.left-set button:disabled{
-    background: #e0e0e0;
-}
-
-.content-main p{
-    cursor: pointer;
-}
-
-.default-comment p{
-    color: dimgray;
-}
-
-.refresh-show{
-    text-align: center;
-}
-
-
-/*
-* 用户详情页面CSS
-*/
-
-
-.user-ind button{
-    padding-bottom: 15px;
-}
-
-
-
- .btn-act{
-    border-bottom: 3px solid red;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 

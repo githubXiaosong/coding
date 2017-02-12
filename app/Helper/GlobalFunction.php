@@ -11,6 +11,13 @@ class GlobalFunction
 
     static function GetCallBackSign($time)
     {
-        return md5(DEFINE_KEY . strval($time));
+        return md5(API_DEFINE_KEY . strval($time));
+    }
+
+//    return ['status' => 1, 'msg' => ['code' => [0 => '验证码有误']]];
+    static function returnModel($status, $msg = null,$data = null)
+    {
+        return ['status' => $status, 'msg' => $msg ,'data' => $data];
     }
 }
+

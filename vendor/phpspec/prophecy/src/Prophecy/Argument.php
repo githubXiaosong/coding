@@ -58,7 +58,7 @@ class Argument
     }
 
     /**
-     * Checks that argument matches provided callback.
+     * Checks that argument matches provided Callback.
      *
      * @param callable $callback
      *

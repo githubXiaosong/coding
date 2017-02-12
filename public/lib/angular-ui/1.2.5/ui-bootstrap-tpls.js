@@ -5642,7 +5642,7 @@ angular.module('ui.bootstrap.tabs', [])
                 heading: '@',
                 index: '=?',
                 classes: '@?',
-                onSelect: '&select', //This callback is called in contentHeadingTransclude
+                onSelect: '&select', //This Callback is called in contentHeadingTransclude
                 //once it inserts the tab's content into the dom
                 onDeselect: '&deselect'
             },
@@ -6353,7 +6353,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.debounce', 'ui.bootstrap
             //binding to a variable that indicates if matches are being retrieved asynchronously
             var isLoadingSetter = $parse(attrs.typeaheadLoading).assign || angular.noop;
 
-            //a callback executed when a match is selected
+            //a Callback executed when a match is selected
             var onSelectCallback = $parse(attrs.typeaheadOnSelect);
 
             //should it select highlighted popup value when losing focus?

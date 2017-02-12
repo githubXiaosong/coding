@@ -2690,7 +2690,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * @param {function=} stateConfig.onEnter
          * <a id='onEnter'></a>
          *
-         * callback function for when a state is entered. Good way
+         * Callback function for when a state is entered. Good way
          *   to trigger an action or dispatch an event, such as opening a dialog.
          * If minifying your scripts, make sure to explictly annotate this function,
          * because it won't be automatically annotated by your build tools.
@@ -2702,7 +2702,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * @param {function=} stateConfig.onExit
          * <a id='onExit'></a>
          *
-         * callback function for when a state is exited. Good way to
+         * Callback function for when a state is exited. Good way to
          *   trigger an action or dispatch an event, such as opening a dialog.
          * If minifying your scripts, make sure to explictly annotate this function,
          * because it won't be automatically annotated by your build tools.

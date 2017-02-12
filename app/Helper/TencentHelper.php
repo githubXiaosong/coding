@@ -22,7 +22,7 @@ class  TencentHelper
     {
         if($key && $time){
 
-            $txTime = strtoupper(base_convert($time,10,16));
+            $txTime = strtoupper(base_convert(strtotime($time),10,16));
             //txSecret = MD5( KEY + livecode + txTime )
             //livecode = bizid+"_"+stream_id  如 8888_test123456
             $livecode = $bizId."_".$streamId; //直播码
@@ -80,6 +80,8 @@ class  TencentHelper
         curl_close($i);
         return json_decode($ret,true);
     }
+
+
 
 
 }

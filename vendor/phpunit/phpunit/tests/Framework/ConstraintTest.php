@@ -1762,13 +1762,13 @@ EOF
         $constraint = PHPUnit_Framework_Assert::callback($callback);
         $this->assertTrue($constraint->evaluate(null, '', true));
 
-        $this->assertEquals('is accepted by specified callback', $constraint->toString());
+        $this->assertEquals('is accepted by specified Callback', $constraint->toString());
     }
 
     /**
      * @covers PHPUnit_Framework_Constraint_Callback
      * @expectedException PHPUnit_Framework_ExpectationFailedException
-     * @expectedExceptionMessage Failed asserting that 'This fails' is accepted by specified callback.
+     * @expectedExceptionMessage Failed asserting that 'This fails' is accepted by specified Callback.
      */
     public function testConstraintCallbackFailure()
     {

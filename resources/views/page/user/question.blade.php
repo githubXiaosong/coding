@@ -1,9 +1,22 @@
-<div ng-controller="UserQuestionController" >
-    <div  ng-repeat="item in User.questions">
-        <h4> [: item.title :] </h4>
-        <h5> [: item.desc :] </h5>
-        <h6> [: item.created_at :] </h6>
-    </div>
-</div>
+@extends('page.user.index')
 
 
+@section('menu')
+    <a href="#" class="list-group-item  ">
+        我的资料
+    </a>
+    <a href="#" class="list-group-item  ">
+        我的直播
+    </a>
+    <a href="#" class="list-group-item ">
+        我的关注
+    </a>
+    <a href="#" class="list-group-item active">
+        问题反馈
+    </a>
+@stop
+
+@section('content_user')
+
+
+@stop

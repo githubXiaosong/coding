@@ -53,7 +53,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
         'enableSslOnlyMode' => false, // bool Force connection by SSL for clients with PHP Console installed
         'ipMasks' => array(), // array Set IP masks of clients that will be allowed to connect to PHP Console: array('192.168.*.*', '127.0.0.1')
         'enableEvalListener' => false, // bool Enable eval request to be handled by eval dispatcher(if enabled, 'password' option is also required)
-        'dumperDetectCallbacks' => false, // bool Convert callback items in dumper vars to (callback SomeClass::someMethod) strings
+        'dumperDetectCallbacks' => false, // bool Convert Callback items in dumper vars to (Callback SomeClass::someMethod) strings
         'dumperLevelLimit' => 5, // int Maximum dumped vars array or object nested dump level
         'dumperItemsCountLimit' => 100, // int Maximum dumped var same level array items or object properties number
         'dumperItemSizeLimit' => 5000, // int Maximum length of any string or dumped array item

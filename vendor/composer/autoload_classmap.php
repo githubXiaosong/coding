@@ -6,8 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateTableGroups' => $baseDir . '/database/migrations/2017_01_01_120924_create_table_groups.php',
-    'CreateTableLivers' => $baseDir . '/database/migrations/2017_01_01_120846_create_table_livers.php',
+    'AlertTableLivesPushaddr' => $baseDir . '/database/migrations/2017_02_01_125548_alert_table_lives_pushaddr.php',
+    'CreateTableCategories' => $baseDir . '/database/migrations/2017_02_05_133611_create_table_categories.php',
+    'CreateTableCategoryLive' => $baseDir . '/database/migrations/2017_02_05_134025_create_table_category_live.php',
+    'CreateTableLiveUserWatching' => $baseDir . '/database/migrations/2017_01_21_091732_create_table_live_user_watching.php',
+    'CreateTableLives' => $baseDir . '/database/migrations/2017_01_21_091533_create_table_lives.php',
+    'CreateTableTapeUserLike' => $baseDir . '/database/migrations/2017_01_21_091809_create_table_tape_user_like.php',
+    'CreateTableTapeUserWatched' => $baseDir . '/database/migrations/2017_01_21_091809_create_table_tape_user_watched.php',
+    'CreateTableTapes' => $baseDir . '/database/migrations/2017_01_21_091556_create_table_tapes.php',
+    'CreateTableUsers' => $baseDir . '/database/migrations/2017_01_21_091515_create_table_users.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
@@ -97,7 +104,7 @@ return array(
     'PHPUnit_Framework_Constraint_ArrayHasKey' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php',
     'PHPUnit_Framework_Constraint_ArraySubset' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php',
     'PHPUnit_Framework_Constraint_Attribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Attribute.php',
-    'PHPUnit_Framework_Constraint_Callback' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/callback.php',
+    'PHPUnit_Framework_Constraint_Callback' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Callback.php',
     'PHPUnit_Framework_Constraint_ClassHasAttribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php',
     'PHPUnit_Framework_Constraint_ClassHasStaticAttribute' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php',
     'PHPUnit_Framework_Constraint_Composite' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Composite.php',

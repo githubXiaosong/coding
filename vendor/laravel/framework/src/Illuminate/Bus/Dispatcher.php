@@ -35,7 +35,7 @@ class Dispatcher implements DispatcherContract, QueueingDispatcher
     protected $pipes = [];
 
     /**
-     * The queue resolver callback.
+     * The queue resolver Callback.
      *
      * @var \Closure|null
      */
