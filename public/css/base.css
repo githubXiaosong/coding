@@ -80,3 +80,22 @@ body {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
+.category-avatar{
+    padding-left: 0px;
+}
+
+.category-msg{
+    padding-right: 0px;
+}
+
+.category-top{
+    margin-top: 5px;
+}
+
+.category-msg-watchnum{
+    margin-left: 70px;
+}
+
+.category-msg-nickname{
+    margin-bottom: 0px; font-size: 10px;max-lines: 1;
+}

@@ -5,7 +5,7 @@ angular.module('live', [])
         '$http',
         function ($scope, $http) {
 
-            (function () {
+
                 /**
                  * 视频类型播放优先级
                  * mobile ：m3u8>mp4
@@ -27,43 +27,9 @@ angular.module('live', [])
                 };
                 var player = new TcPlayer('video-container', options);
                 window.qcplayer = player;
-            })();
+                console.log(rtmp);
 
-            $(window).load(function () {
-                $http.post('/laravel/coding/public/enterGroup'
-                    , {'live_id': live_id})
-                    .then(function (r) {
-                        console.log(r);
-                    }
-                    , function (e) {
-                        console.log(e);
-                    })
-            });
 
-            //监听不到
-            //$(function () {
-            //    $(window).unload(function () {
-            //        $http.post('/laravel/coding/public/quitGroup'
-            //            , {'live_id': live_id})
-            //            .then(function (r) {
-            //                console.log(r);
-            //            }
-            //            , function (e) {
-            //                console.log(e);
-            //            })
-            //    });
-            //});
-
-            $(window).beforeunload(function(event){
-                $http.post('/laravel/coding/public/quitGroup'
-                    , {'live_id': live_id})
-                    .then(function (r) {
-                        console.log(r);
-                    }
-                    , function (e) {
-                        console.log(e);
-                    })
-            });
 
 
 

@@ -866,3 +866,19 @@ response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <statusMsg>【短信】应用未上线，模板短信接收号码外呼受限</statusMsg>
 </Response>
 
+request body = <TemplateSMS>
+                    <to>13081114886</to>
+                    <appId>8a216da859b4ceed0159d00c248c0798</appId>
+                    <templateId>1</templateId>
+                    <datas><data>5194</data><data>5</data></datas>
+                  </TemplateSMS>
+request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8a216da859b4ceed0159d00c241f0793/SMS/TemplateSMS?sig=AA24C15A4E72DDCA91DF2234AE7D91E6
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Response>
+    <statusCode>000000</statusCode>
+    <TemplateSMS>
+        <smsMessageSid>6f622fc6e3a74984acfe059f691591a9</smsMessageSid>
+        <dateCreated>20170214170114</dateCreated>
+    </TemplateSMS>
+</Response>
+

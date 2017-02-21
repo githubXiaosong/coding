@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 
+use App\Helper\GlobalFunction;
 use App\Helper\ValidateCode;
 use App\Http\Requests;
 
 
+use App\Live;
 use App\User;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class CommonController extends Controller
 {
-
 
 
     /**
@@ -21,15 +23,10 @@ class CommonController extends Controller
      *
      */
 
-
-    /**
-     * 成功返回生成的验证码 失败var_dump
-     */
-
-
     public function test()
     {
-        dd(substr('4465_24',5));
+        echo base_path("asd");
+
     }
 
 }

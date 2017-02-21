@@ -20,8 +20,6 @@
         var coverpic ='{{ $coverpic }}';
         var autoplay ='{{ $autoplay }}';
         var live_id = '{{ $live_id }}'
-
-
     </script>
 
 @stop

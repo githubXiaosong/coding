@@ -5,8 +5,9 @@
 @stop
 
 @section('content')
-    <div class="text-center" ng-controller="CategoryController">
-        <h2>{{rq('category_title')}}</h2>
+    <div ng-controller="CategoryController">
+
+        <h2 >{{rq('category_title')}}</h2>
 
         <div class="col-md-12  category-container">
 
@@ -17,9 +18,33 @@
                              class="img-rounded  category-item-img" alt="...">
 
                         <div class="caption">
-                            <h3>{{$item->title}}</h3>
+                            <div class="col-md-2 category-avatar" >
+                                @if($item->user->avatar_url)
+                                    <img src="{{ $user->avatar_url }}" alt="" class="img-circle avatar">
+                                @else
+                                    <img src="/laravel/coding/public/img/Penguins.jpg" alt="" class="img-circle avatar" style="width: 45px; height: 45px; ">
+                                @endif
 
-                            <p>{{$item->desc}}</p>
+                            </div>
+                            <div class="col-md-10 category-msg" >
+                                <h5>
+                                <strong class="category-top">
+                                    {{$item->title}}
+
+                                    <span class="glyphicon glyphicon-eye-open category-msg-watchnum" aria-hidden="true" ></span>
+                                    {{ $item->watchnum }}
+                                </strong>
+                                </h5>
+                                <p class="text-muted category-msg-nickname" >
+                                   {{ $item->user->nickname?:'用户'.$item->user->phone }}
+                                </p>
+                            </div>
+
+
+                            <div class="clearfix" ></div>
+                            {{--<h3>{{$item->title}}</h3>--}}
+
+                            {{--<p>{{$item->desc}}</p>--}}
                         </div>
                     </div>
                 </a>

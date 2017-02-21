@@ -6,6 +6,7 @@ use App\Helper\TencentHelper;
 use App\Http\Requests;
 use App\Live;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 
 class LiveController extends Controller
@@ -21,7 +22,7 @@ class LiveController extends Controller
         if(!$live)
             return redirect('home');
 
-        $play_array = TencentHelper::GetPlayUrl(BIZID,$live_id);
+        $play_array = TencentHelper::GetPlayUrl(BIZID,$live->user_id);
         return view('page.live.index')->with([
             'live_id' => rq('live_id'),
             'rtmp' => $play_array[0],

@@ -331,7 +331,7 @@
                                ng-model="createLiveData.desc"
                                class="form-control"
                                id="exampleInputPassword1"
-                               placeholder="10-100字之内"
+                               placeholder="10字之内"
                                maxlength="100"
                                required
                                 >
