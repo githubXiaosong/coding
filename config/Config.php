@@ -18,6 +18,8 @@ define('TENCENT_STREAM_ON',1);
 define('TENCENT_NEW_TAPE',100);
 define('TENCENT_NEW_PIC',200);
 define('TENCENT_CHECK_STATUS_URL_HEADER','http://fcgi.video.qcloud.com/common_access?');
+define('ERROR_CODE_PARAMS_ERROR',1);
+define('ERROR_CODE_DB_ERROR',2);
 
 
 

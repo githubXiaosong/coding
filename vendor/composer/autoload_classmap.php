@@ -6,15 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AlertTableLivesPushaddr' => $baseDir . '/database/migrations/2017_02_01_125548_alert_table_lives_pushaddr.php',
-    'CreateTableCategories' => $baseDir . '/database/migrations/2017_02_05_133611_create_table_categories.php',
-    'CreateTableCategoryLive' => $baseDir . '/database/migrations/2017_02_05_134025_create_table_category_live.php',
-    'CreateTableLiveUserWatching' => $baseDir . '/database/migrations/2017_01_21_091732_create_table_live_user_watching.php',
-    'CreateTableLives' => $baseDir . '/database/migrations/2017_01_21_091533_create_table_lives.php',
-    'CreateTableTapeUserLike' => $baseDir . '/database/migrations/2017_01_21_091809_create_table_tape_user_like.php',
-    'CreateTableTapeUserWatched' => $baseDir . '/database/migrations/2017_01_21_091809_create_table_tape_user_watched.php',
-    'CreateTableTapes' => $baseDir . '/database/migrations/2017_01_21_091556_create_table_tapes.php',
-    'CreateTableUsers' => $baseDir . '/database/migrations/2017_01_21_091515_create_table_users.php',
+    'AlertTableLivesCategoryId' => $baseDir . '/database/migrations/2017_02_01_125548_alert_table_lives_category_id.php',
+    'CreatePetsTable' => $baseDir . '/database/migrations/2017_04_19_102146_create_pets_table.php',
+    'CreateSessionsTable' => $baseDir . '/database/migrations/2017_04_16_154413_create_sessions_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

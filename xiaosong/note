@@ -532,7 +532,7 @@ DB默认不维护时间戳
 
 2_2
 没有什么重量级逻辑可以直接在html中调用接口 不用每次都写js
-file_get_contents("http://127.0.0.1/laravel/coding/public/getCategory") 直接访问接口只能get
+file_get_contents("http://127.0.0.1/public/getCategory") 直接访问接口只能get
 
 2_8
 {{ \Illuminate\Support\Facades\Request::is('user/data') ? 'active' : '' }} 路径导航
@@ -548,3 +548,14 @@ function () {
                 }
                 return null;
             }
+2_13
+栅格系统是相对于父元素的
+3_14 file_get_contents 请求的时候是独立的请求 不包含所有的服务器和客户端的session信息
+
+
+
+
+4_19
+    要写的note  1接口文档 2不要随意暴露地址让他们因为没做身份验证  3告诉他们ID怎么用  4还没有写更改宠物信息的模块 他们要的时候再说
+    请不要做恶意操作
+    一日三餐不管有没有进食都应发送数据

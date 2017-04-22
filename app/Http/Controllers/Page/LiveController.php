@@ -15,19 +15,20 @@ class LiveController extends Controller
     {
         $live_id = rq('live_id');
         if(!$live_id)
-            return redirect('home');
+            return redirect('/');
 
-        $live=Live::find($live_id);
+	$live=Live::where('id',$live_id)->with(['user','category'])->first();
         if(!$live)
-            return redirect('home');
+            return redirect('');
 
-        $play_array = TencentHelper::GetPlayUrl(BIZID,$live_id);
+        $play_array = TencentHelper::GetPlayUrl(BIZID,$live->user_id);
         return view('page.live.index')->with([
+	    'live' => $live,
             'live_id' => rq('live_id'),
             'rtmp' => $play_array[0],
             'flv' => $play_array[1],
             'm3u8' => $play_array[2],
-            'live' => true,
+            'islive' => true,
             'coverpic' => $live->frontcover,
             'autoplay' => true,
             ]);

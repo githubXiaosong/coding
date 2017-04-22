@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $lives=Live::where([
             'category_id'=>rq('category_id'),
             'status'=>1
-        ])->paginate(16);
+        ])->with(['user','category'])->paginate(16);
 
         return view('page.category.index')->with(['lives'=>$lives]);
     }

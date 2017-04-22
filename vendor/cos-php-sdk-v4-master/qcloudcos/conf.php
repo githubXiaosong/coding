@@ -18,4 +18,5 @@ class Conf {
     public static function getUserAgent() {
         return 'cos-php-sdk-' . self::VERSION;
     }
+
 }

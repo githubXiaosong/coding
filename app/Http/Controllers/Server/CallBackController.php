@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Tape;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CallBackController extends Controller
 {
@@ -41,14 +42,11 @@ class CallBackController extends Controller
                         break;
 
                     case TENCENT_NEW_PIC:
-
-                        $ret = DB::table('lives')
+			 $ret = DB::table('lives')
                             ->where(['user_id' => (substr($data['stream_id'], 5))])
-                            ->update([
-                                'frontcover' => 'http://' . COS_BUCKET_NAME . '-' . APPID . '.file.myqcloud.com' . $data['pic_url']
-                            ]);
+                            ->update(['frontcover' => $data['pic_full_url']]);
                         if ($ret == 0)
-                            exit("ERROR200");
+                            Log::error('update img error');	
                         break;
 
                     default:
@@ -64,19 +62,6 @@ class CallBackController extends Controller
     }
 
 
-    //todo 需要放到定时任务中去
-    //todo 地址调用没有成功 马丹
-    public function checkOnlineStatus()
-    {
-        $lives = DB::table('lives')->where('status', 1)->get(['id']);
-        foreach ($lives as $item) {
-            $time_now = time();
-            $md5_sign = GlobalFunction::GetCallBackSign($time_now);
-            $url = TENCENT_CHECK_STATUS_URL_HEADER . 'cmd=' . APPID . '&interface=Live_Channel_GetStatus&Param.s.channel_id=' . BIZID . '_' . $item->id . '&t=' . strval($time_now) . '&sign=' . strval($md5_sign);
-
-            echo $url . '<br>';
-        }
-    }
 
 
 }

@@ -34,7 +34,7 @@ angular.module('xiaohu',['ui.router','user','question','common','answer','test']
 
                 .state('test',{
                     url:'/test',
-                    templateUrl:'/laravel/coding/public/tpl/page/test'
+                    templateUrl:'/public/tpl/page/test'
                 })
 
                 .state('question',{

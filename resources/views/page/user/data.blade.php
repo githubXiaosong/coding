@@ -21,7 +21,7 @@
                             @if($user->avatar_url)
                                 <img src="{{ $user->avatar_url }}" alt="" class="img-circle avatar">
                             @else
-                                <img src="/laravel/coding/public/img/Koala.jpg" alt="" class="img-circle avatar">
+                                <img src="/img/Koala.jpg" alt="" class="img-circle avatar">
                             @endif
                         </div>
                         <div class="user-info-text ">

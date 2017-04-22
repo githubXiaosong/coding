@@ -3,7 +3,7 @@
  *
  */
 
-angular.module('coding', ['home','user','category','live'])
+angular.module('coding', ['home','user','category','live','keda'])
     .config([
         '$interpolateProvider',
         function ($interpolateProvider){
@@ -22,7 +22,7 @@ angular.module('coding', ['home','user','category','live'])
         function ($scope, $http ) {
 
             $scope.changeCode= function () {
-                $('#logincode').attr('src','/laravel/coding/public/createCode?random'+Math.random());
+                $('#logincode').attr('src','/createCode?random'+Math.random());
             }
 
             $scope.signUp = function () {
@@ -30,7 +30,7 @@ angular.module('coding', ['home','user','category','live'])
                 console.log($scope.signupdata.password);
                 console.log($scope.signupdata.repassword);
                 console.log($scope.signupdata.validatecode);
-                $http.post('/laravel/coding/public/register'
+                $http.post('/register'
                     ,{
                         'phone':$scope.signupdata.phone,
                         'password':$scope.signupdata.password,
@@ -54,7 +54,7 @@ angular.module('coding', ['home','user','category','live'])
 
 
             $scope.login = function () {
-                $http.post('/laravel/coding/public/login'
+                $http.post('/login'
                     ,{
                         'phone':$scope.logindata.phone,
                         'password':$scope.logindata.password,
@@ -80,7 +80,7 @@ angular.module('coding', ['home','user','category','live'])
             $scope.getSMSCode = function () {
                 console.log('getSMSCode');
                 console.log($scope.signupdata.phone);
-                $http.post('/laravel/coding/public/sendSMS'
+                $http.post('/sendSMS'
                     ,{'phone':$scope.signupdata.phone})
                     .then(function(r){
 

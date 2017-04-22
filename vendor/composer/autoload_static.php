@@ -253,15 +253,9 @@ class ComposerStaticInit67db7509c61e60a4f92e012c704d3566
     );
 
     public static $classMap = array (
-        'AlertTableLivesPushaddr' => __DIR__ . '/../..' . '/database/migrations/2017_02_01_125548_alert_table_lives_pushaddr.php',
-        'CreateTableCategories' => __DIR__ . '/../..' . '/database/migrations/2017_02_05_133611_create_table_categories.php',
-        'CreateTableCategoryLive' => __DIR__ . '/../..' . '/database/migrations/2017_02_05_134025_create_table_category_live.php',
-        'CreateTableLiveUserWatching' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091732_create_table_live_user_watching.php',
-        'CreateTableLives' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091533_create_table_lives.php',
-        'CreateTableTapeUserLike' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091809_create_table_tape_user_like.php',
-        'CreateTableTapeUserWatched' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091809_create_table_tape_user_watched.php',
-        'CreateTableTapes' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091556_create_table_tapes.php',
-        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_091515_create_table_users.php',
+        'AlertTableLivesCategoryId' => __DIR__ . '/../..' . '/database/migrations/2017_02_01_125548_alert_table_lives_category_id.php',
+        'CreatePetsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_19_102146_create_pets_table.php',
+        'CreateSessionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_16_154413_create_sessions_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

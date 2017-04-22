@@ -74,7 +74,7 @@ class UserController extends Controller
     {
 //        dd(Session::all());
         Session::flush();
-        return redirect('home');
+        return redirect('/');
     }
 
     protected function validateCode()

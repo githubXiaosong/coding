@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
     {{--默认是从public目录开始的  /就是跟目录的--}}
-    <link rel="stylesheet" href="/laravel/coding/public/lib/normalize/normalize.css">
-    <link rel="stylesheet" href="/laravel/coding/public/lib/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/laravel/coding/public/css/base.css">
-    <script src="/laravel/coding/public/lib/jquery/jquery.js"></script>
-    <script src="/laravel/coding/public/lib/angular/angular.min.js"></script>
-    <script src="/laravel/coding/public/lib/bootstrap/bootstrap.min.js"></script>
-    <script src="/laravel/coding/public/js/base.js"></script>
-    <script src="/laravel/coding/public/js/home.js"></script>
-    <script src="/laravel/coding/public/js/user.js"></script>
-    <script src="/laravel/coding/public/js/live.js"></script>
-    <script src="/laravel/coding/public/js/category.js"></script>
+    <link rel="stylesheet" href="/lib/normalize/normalize.css">
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/live.js"></script>
+    <script src="/js/category.js"></script>
+    <script src="/js/keda.js"></script>
 </head>
 
-<body class="">
+<body >
 
 
 @section('navbar')
@@ -66,7 +67,8 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword3"  class="col-sm-2 control-label">密码</label>
+                                <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+
                                 <div class="col-sm-10">
                                     <div class="col-xs-8">
                                         <input
@@ -88,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword3"  class="col-sm-2 control-label">验证码</label>
+                                <label for="inputPassword3" class="col-sm-2 control-label">验证码</label>
 
                                 <div class="col-sm-10">
                                     <div class="col-xs-3">
@@ -108,8 +110,9 @@
                                                       <span ng-show="loginform.validatecode.$error.pattern||loginform.validatecode.$error.minlength || loginform.validatecode.$error.maxlength">验证码为四位。</span>
 
                                                       </span>
+
                                     <div class="col-xs-3">
-                                        <img id="logincode" src="/laravel/coding/public/createCode">
+                                        <img id="logincode" src="/createCode">
                                         <a id="logincodelink" style="cursor: pointer" ng-click="changeCode()">换一张</a>
                                     </div>
 
@@ -284,19 +287,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="{{ \Illuminate\Support\Facades\Request::is('home') ? 'active' : '' }}"><a href="{{url('home')}}" >首页</a></li>
-                    <li class="{{ \Illuminate\Support\Facades\Request::is('live') ? 'active' : '' }}"><a href="{{url('live')}}" >直播中</a></li>
+                    <li class="{{ \Illuminate\Support\Facades\Request::is('/') ? 'active' : '' }}"><a
+                                href="{{url('/')}}">首页</a></li>
+                    <li class="{{ \Illuminate\Support\Facades\Request::is('live') ? 'active' : '' }}"><a
+                                href="{{url('live')}}">直播中</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">所有分类 <span class="caret"></span></a>
 
                         <ul class="dropdown-menu" role="menu">
-                            @foreach( json_decode(file_get_contents("http://127.0.0.1/laravel/coding/public/getCategory"),true) as $item)
+                            @foreach( json_decode(file_get_contents("http://127.0.0.1/getCategory"),true) as $item)
                                 <li>
                                     <a href="{{ url('category').'?category_id='.$item['id'].'&category_title='.$item['title'] }}">
                                         {{ $item['title'] }}
                                     </a>
                                 </li>
-                                @endforeach
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
@@ -318,22 +323,24 @@
                     </li>
                     <li>
                         @if (! \Illuminate\Support\Facades\Session::has('user'))
-                        <a href="#" data-toggle="modal" data-target="#signUpModel" >注册</a>
+                            <a href="#" data-toggle="modal" data-target="#signUpModel">注册</a>
                         @endif
 
 
                     </li>
                     @if ( \Illuminate\Support\Facades\Session::has('user') )
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ \Illuminate\Support\Facades\Session::get('user')->phone }}<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{url('user/data')}}">个人中心</a></li>
-                            <li><a href="#">我的关注</a></li>
-                            <li><a href="{{url('user/live')}}">我的直播</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/laravel/coding/public/logout">退出登录</a></li>
-                        </ul>
-                    </li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle"
+                               data-toggle="dropdown">{{ \Illuminate\Support\Facades\Session::get('user')->phone }}<span
+                                        class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{url('user/data')}}">个人中心</a></li>
+                                <li><a href="#">我的关注</a></li>
+                                <li><a href="{{url('user/live')}}">我的直播</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/logout">退出登录</a></li>
+                            </ul>
+                        </li>
                     @endif
                 </ul>
             </div>
@@ -345,11 +352,22 @@
 
     @show
             <!--上结束-->
-    <div class=" content" >
-         @yield('content')
+    <div class=" content">
+        @yield('content')
     </div>
 
 @section('end')
+
+
+    <footer class="footer mt-20" style="">
+        <div class="container-fluid">
+            <nav><a href="#" target="_blank">关于我们</a> <span class="pipe">|</span> <a href="#" target="_blank">联系我们</a>
+                <span class="pipe">|</span> <a href="#" target="_blank">法律声明</a></nav>
+            <p>Copyright &copy;2017 xiaosong1234.cn All Rights Reserved. <br>
+                <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">河北科技大学@小松</a><br>
+            </p>
+        </div>
+    </footer>
 
     @show
             <!--下开始-->

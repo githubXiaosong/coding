@@ -4,9 +4,36 @@ angular.module('user',[])
         '$scope',
         '$http',
         function ($scope,$http) {
+
             /**
-             * 把用户的信息挂到scope中去
+             * 查询直播来控制机按钮的显示逻辑
              */
+            $scope.have_live=0;
+            $scope.haveLive = function () {
+                $http.post('/haveLive')
+                    .then(function (r) {
+                        console.log(r);
+                        if (r.data.status == 0) {
+                            if(r.data.data == 1)
+                            {
+                                $scope.have_live = 1;
+                            }else{
+                                $scope.have_live = 0;
+                            }
+                        } else if (r.data.status != 0) {
+                            console.log('error');
+                        }
+                    }
+                    , function (e) {
+                        //fail
+                        console.log(e);
+                    })
+
+                return 1;
+            }
+            $scope.haveLive();
+
+
 
         }
     ])
@@ -49,7 +76,7 @@ angular.module('user',[])
                 console.log($scope.createLiveData.title);
                 console.log($scope.createLiveData.desc);
                 console.log($scope.createLiveData.accept);
-                $http.post('/laravel/coding/public/createLive'
+                $http.post('/createLive'
                     ,{
                         'title':$scope.createLiveData.title,
                         'desc':$scope.createLiveData.desc,

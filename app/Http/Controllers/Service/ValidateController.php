@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Service;
 
 use App\Helper\GlobalFunction;
 use App\Helper\ValidateCode;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Routing\Controller;
@@ -13,7 +12,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ValidateController extends Controller
 {
-
     /**
      * @param $phone 发送的手机号
      *
@@ -27,7 +25,7 @@ class ValidateController extends Controller
 
         $validator = Validator::make(rq(),
             [
-                'phone' => 'required|min:11|max:11',
+                'phone' => 'required|min:11|max:11|integer',
             ],
             [
                 'phone.required' => '手机号不存在',
@@ -55,7 +53,5 @@ class ValidateController extends Controller
         Session::put('validateCode',$validate->getCode());
         return $validate->doimg();
     }
-
-
 
 }
