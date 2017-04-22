@@ -83,6 +83,7 @@
         var coverpic = '{{ $coverpic }}';
         var autoplay = '{{ $autoplay }}';
         var live_id = '{{ $live_id }}'
+<<<<<<< HEAD
 
         var options = {
             flv: flv,
@@ -120,6 +121,8 @@
 
 
 
+=======
+>>>>>>> origin/master
     </script>
 
 @stop

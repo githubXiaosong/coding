@@ -103,6 +103,7 @@ dy {
 .category-msg-nickname{
     margin-bottom: 0px; font-size: 10px;max-lines: 1;
 }
+<<<<<<< HEAD
 
 .footer{border-top:1px solid #E8E8E8; padding:15px 0;font-family:tahoma,Arial;font-size:12px;color:#999;line-height:22px;text-align:center;background: #101010}
 .footer a,.footer a:hover{color:#999}
@@ -205,3 +206,5 @@ dy {
 .carousel-indicators .active{
     background: #000000;
 }
+=======
+>>>>>>> origin/master

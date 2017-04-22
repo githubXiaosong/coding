@@ -29,6 +29,9 @@ class GlobalFunction
         return json_decode($output);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }
 

@@ -6,6 +6,7 @@ use App\Helper\TencentHelper;
 use App\Http\Requests;
 use App\Live;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 
 class LiveController extends Controller

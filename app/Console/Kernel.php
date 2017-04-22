@@ -18,7 +18,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+<<<<<<< HEAD
 	 \App\Console\Commands\Inspire::class,
+=======
+        Commands\Inspire::class,
+>>>>>>> origin/master
     ];
 
     /**
@@ -30,12 +34,19 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
+<<<<<<< HEAD
 
             $lives = DB::table('lives')->where('status', 1)->get(['user_id']);
             foreach ($lives as $item) {
                 $addr = 'http://fcgi.video.qcloud.com/common_access?cmd=' . APPID . '&interface=Live_Channel_GetStatus&Param.s.channel_id=' . BIZID . '_' . $item->user_id . '&t=' . time() . '&sign=' . GlobalFunction::GetCallBackSign(time());
 
 		$output=GlobalFunction::getCurlOutput($addr);
+=======
+            $lives = DB::table('lives')->where('status', 1)->get(['user_id']);
+            foreach ($lives as $item) {
+                $addr = 'http://fcgi.video.qcloud.com/common_access?cmd=' . APPID . '&interface=Live_Channel_GetStatus&Param.s.channel_id=' . BIZID . '_' . $item->user_id . '&t=' . time() . '&sign=' . GlobalFunction::GetCallBackSign(time());
+                $output = GlobalFunction::getCurlOutput($addr);
+>>>>>>> origin/master
                 if ($output->ret == 0) {
                     if ($output->output[0]->status != 1) {
                         DB::table('lives')->where('user_id', $item->user_id)->update(['status' => 0]);
@@ -44,9 +55,22 @@ class Kernel extends ConsoleKernel
                     Log::error($output->ret . $output->message);
                 }
             }
+<<<<<<< HEAD
 
         })->everyFiveMinutes();
 
+=======
+        })->everyFiveMinutes();
+
+        $schedule->call(function () {
+            $lives = DB::table('lives')->where('status', 1)->get(['user_id']);
+            foreach ($lives as $item) {
+
+            }
+        })->everyFiveMinutes();
+
+
+>>>>>>> origin/master
         $schedule->call(function () {
             $time = time();
             $lives = Live::get();
@@ -54,9 +78,15 @@ class Kernel extends ConsoleKernel
                 if (($time - strtotime($item->created_at)) > 36000)
                     $item->delete();
             }
+<<<<<<< HEAD
         })->everyFiveMinutes();
 
 	
+=======
+        })->everyMinute();
+
+
+>>>>>>> origin/master
     }
 }
 

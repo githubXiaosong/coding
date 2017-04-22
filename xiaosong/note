@@ -550,6 +550,7 @@ function () {
             }
 2_13
 栅格系统是相对于父元素的
+<<<<<<< HEAD
 3_14 file_get_contents 请求的时候是独立的请求 不包含所有的服务器和客户端的session信息
 
 
@@ -559,3 +560,35 @@ function () {
     要写的note  1接口文档 2不要随意暴露地址让他们因为没做身份验证  3告诉他们ID怎么用  4还没有写更改宠物信息的模块 他们要的时候再说
     请不要做恶意操作
     一日三餐不管有没有进食都应发送数据
+=======
+
+2_16
+$addr=  'http://fcgi.video.qcloud.com/common_access?cmd='.APPID.'&interface=Live_Channel_GetStatus&Param.s.channel_id='.BIZID.'_'.'1'.'&t='.time().'&sign='.GlobalFunction::GetCallBackSign(time());
+
+        $ch = curl_init($addr);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $output = curl_exec($ch);
+
+        curl_close($ch);
+        使用curl需要设置输出到返回值而不是输出到页面
+
+不去删除直播信息了 每个用户只允许有一个直播信息
+
+
+2_19
+ $lives = Live::get();  $lives = Live::get(['created_at']);
+ 只有把所有的属性都查询出来才能够执行删除 才是一个模型 不然不能进行删除
+
+2_20
+只是预览不到 其实地址可以拿到
+
+2_21
+③各个资源路径常量
+一、public_path('xx');
+说明：public文件路径
+二、base_path('xx');
+三、app_path('xx');
+四、resource_path('xx');
+>>>>>>> origin/master

@@ -5,6 +5,7 @@ angular.module('live', [])
         '$http',
         function ($scope, $http) {
 
+<<<<<<< HEAD
             //IE9(含)以下浏览器用到的jsonp回调函数
             function jsonpCallback(rspData) {
                 //设置接口返回的数据
@@ -13,6 +14,9 @@ angular.module('live', [])
 
 //监听大群新消息（普通，点赞，提示，红包）
             function onBigGroupMsgNotify(msgList) {
+=======
+
+>>>>>>> origin/master
                 /**
                  * 但是如果说是没有msg可以显示的化就直接跳过这个for循环了 但是onBigGroupMshNotify函数还是会执行
                  // */
@@ -468,6 +472,7 @@ angular.module('live', [])
                 var options = {
                     'GroupId': avChatRoomId//群id
                 };
+<<<<<<< HEAD
                 webim.quitBigGroup(
                     options,
                     function (resp) {
@@ -723,6 +728,13 @@ angular.module('live', [])
             } else {//未登录,无登录态模式
                 //sdk登录
                 sdkLogin();
+=======
+                var player = new TcPlayer('video-container', options);
+                window.qcplayer = player;
+                console.log(rtmp);
+
+
+>>>>>>> origin/master
 
             }
 

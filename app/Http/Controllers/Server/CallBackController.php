@@ -42,11 +42,29 @@ class CallBackController extends Controller
                         break;
 
                     case TENCENT_NEW_PIC:
+<<<<<<< HEAD
 			 $ret = DB::table('lives')
                             ->where(['user_id' => (substr($data['stream_id'], 5))])
                             ->update(['frontcover' => $data['pic_full_url']]);
                         if ($ret == 0)
                             Log::error('update img error');	
+=======
+                        $ret = DB::table('lives')
+                            ->where(['user_id' => (substr($data['stream_id'], 5))])
+                            ->update(['frontcover' => $data['pic_full_url']]);
+                        if ($ret == 0)
+                            Log::error('update img error');
+
+
+//                        $ret = DB::table('lives')
+//                            ->where(['user_id' => (substr($data['stream_id'], 5))])
+//                            ->update([
+//                                'frontcover' => 'http://' . COS_BUCKET_NAME . '-' . APPID . '.file.myqcloud.com' . $data['pic_url']
+//                            ]);
+//                        if ($ret == 0)
+
+//                            exit("ERROR200");
+>>>>>>> origin/master
                         break;
 
                     default:
@@ -62,6 +80,7 @@ class CallBackController extends Controller
     }
 
 
+<<<<<<< HEAD
 
 
 }
@@ -91,3 +110,7 @@ class CallBackController extends Controller
 //    "video_id": "200025724_ac92b781a22c4a3e937c9e61c2624af7",
 //    "video_url": "http://200025724.vod.myqcloud.com/200025724_ac92b781a22c4a3e937c9e61c2624af7.f0.flv"
 //    }
+=======
+}
+
+>>>>>>> origin/master

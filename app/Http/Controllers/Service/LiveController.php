@@ -72,6 +72,8 @@ class LiveController extends Controller
         return GlobalFunction::returnModel(self::DB_ERROR);
     }
 
+
+    //废弃
     public function enterGroup()
     {
         $validator = Validator::make(
@@ -90,6 +92,7 @@ class LiveController extends Controller
         return GlobalFunction::returnModel(0);
     }
 
+    //废弃
     public function quitGroup()
     {
         $validator = Validator::make(

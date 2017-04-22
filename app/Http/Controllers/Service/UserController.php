@@ -87,8 +87,6 @@ class UserController extends Controller
 
     protected function validateSMS()
     {
-//        todo
-        return true;
 
         if (rq('code') == Session::get('sendSMSCode'))
             return true;
